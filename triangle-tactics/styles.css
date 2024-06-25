@@ -1,0 +1,164 @@
+/** For screen preview **/
+@media screen {
+  body { background: #404040 }
+  .sheet {
+    background: #eeeeee;
+    box-shadow: 0 .5mm 2mm rgba(0,0,0,.3);
+    margin: 5mm auto;
+  }
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+  
+body {
+  font-family: Arial, sans-serif;
+  font-size: small;
+  line-height: 1.1;
+  margin: 0.5cm;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+/* th, td {
+  padding: 5px;
+  text-align: center;
+} */
+.gray {
+  color: gray;
+}
+.minipage {
+  display: inline-block;
+  vertical-align: top;
+}
+.minipage-half,
+.minipage-large {
+  width: 49%;
+}
+.minipage-small {
+  width: 20%;
+}
+.minipage-medium {
+  width: 30%;
+}
+.text-center {
+  text-align: center;
+}
+
+#character-info * {
+  padding-block: 0;
+  margin-block: 0;
+}
+
+#ability-scores {
+  border-bottom: 1px solid #000000;
+  padding: 5px;
+  table-layout: fixed;
+}
+
+#ability-scores tr td {
+  border-right: 1px solid #000000;
+  border-left: 1px solid #000000;
+  width: 25%;
+  min-width: 25%;
+  max-width: 25%;
+  text-align: center;
+}
+
+.stats input { 
+  text-align: center; 
+}
+
+input {
+  border: 1px solid transparent;
+  border-bottom: 1px solid gray;
+  background-color: #eeeeee;
+}
+
+#damage-thresholds-container {
+  margin-top: 10px;
+  border-top: 1px solid #000000;
+}
+
+#damage-thresholds {
+  padding-top: 0;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+#damage-thresholds tr td {
+  border-right: 1px solid #000000;
+  border-left: 1px solid #000000;
+  /* width: 10%; */
+  padding: 5px 5px 0 5px;
+}
+
+#damage {
+  border: 1px solid #000000;
+  border-right: 0;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+#damage tr td {
+  /* border: 1px solid #000000; */
+  /* border-block: 0; */
+  padding: 5px 0 0 0;
+  margin: 5px 0 0 0;
+  /* text-align: left; */
+}
+
+#damage input[type="text"] {
+  width: 80%;
+}
+
+#weapons {
+  table-layout: fixed;
+}
+
+#weapons td {
+  padding: 5px 0 0 0;
+  margin: 5px 0 0 0;
+}
+
+#weapons div {
+  padding-right: 5px;
+  margin-right: 5px;
+}
+
+#weapons input[type="text"] {
+  width: 100%;
+}
+
+#experiences tr,
+#experiences td,
+#inventory tr,
+#inventory td {
+  border: 0;
+  margin: 0 0 0 0;
+  padding: 5px 0 0 0;
+  margin: 5px 0 0 0;
+  padding-inline: 0px;
+}
+
+#experiences input,
+#inventory input {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  height: 100%;
+  width: 100%;
+}
+
+#limitedTextarea {
+  resize: none;
+  overflow: hidden;
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
+  word-wrap: break-word; /* Break long words */
+  background-color: #eeeeee;
+  /* border: double; */
+}
