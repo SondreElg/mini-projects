@@ -19,27 +19,6 @@
     <style>@page { size: A4 }</style>
 </head>
 <body class="A4">
-    <!-- <script type="text/javascript">
-      var keynum, lines = 1;
-
-      function limitLines(obj, e) {
-        // IE
-        if(window.event) {
-          keynum = e.keyCode;
-        // Netscape/Firefox/Opera
-        } else if(e.which) {
-          keynum = e.which;
-        }
-
-        if(keynum == 13) {
-          if(lines == obj.rows) {
-            return false;
-          }else{
-            lines++;
-          }
-        }
-      }
-      </script> -->
     <section class="sheet padding-10mm">
         <div class="text-center" style="margin-bottom: 10px;">
             <table class="center" style="width: 80%;">
@@ -63,8 +42,7 @@
                 </tbody>
             </table>
         </div>
-
-        <div class="minipage minipage-half stats">
+        <div style="width: 60%; margin-left: auto; margin-right: auto; padding-bottom: 12px;">
             <div class="text-center">
                 <table id="ability-scores">
                     <tr >
@@ -91,164 +69,203 @@
                         <td style="width: 2em;">
                             <div>
                                 <div style="font-size: xx-large; margin: 0; padding: 0;">⟳</div>
-                                <div style="position: absolute; top: 16px; left: 22px; font-size: smaller;">+5</div>
+                                <div style="position: absolute; top: 150px; left: 520px; font-size: smaller;">+5</div>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td>Broken</td>
+                        <td style="border-left: 0;">Broken</td>
                         <td>Hit</td>
                         <td>Heavy</td>
                         <td>Brutal</td>
-                        <td>Beyond</td>
+                        <td style="border-right: 0;">Beyond</td>
                     </tr>
                 </table>
                 <span class="gray"><strong>Damage Thresholds</strong></span>
             </div>
         </div>
 
-        <div class="minipage minipage-half">
-            <table style="width: 85%;" id="damage">
+
+        <div class="distributer">
+            <div class="minipage minipage-smaller">
+                <div class="stances" style="width: fit-content;">
+                    <table id="stance-table">
+                        <tr>
+                            <td>Attacking</td>
+                        </tr>
+                        <tr>
+                            <td >
+                                <hr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Defending</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <hr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Controlling</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+    
+            <div class="minipage minipage-large">
+                <table id="weapons">
+                    <tr>
+                        <td style="width: 8em;">Weapon</td>
+                        <td style="width: 5em;">Damage</td>
+                        <td style="width: 5em;">Reach</td>
+                        <td style="width: auto;">Tags</td>
+                    </tr>
+                    <tr>
+                        <td><div><input type="text" name="wep1"></div></td>
+                        <td><div><input type="text" name="wep1_dmg"></div></td>
+                        <td><div><input type="text" name="wep1_reach"></div></td>
+                        <td><div><input type="text" name="wep1_tags"></div></td>
+                    </tr>
+                    <tr>
+                        <td><div><input type="text" name="wep2"></div></td>
+                        <td><div><input type="text" name="wep2_dmg"></div></td>
+                        <td><div><input type="text" name="wep2_reach"></div></td>
+                        <td><div><input type="text" name="wep2_tags"></div></td>
+                    </tr>
+                    <tr>
+                        <td><div><input type="text" name="wep3"></div></td>
+                        <td><div><input type="text" name="wep3_dmg"></div></td>
+                        <td><div><input type="text" name="wep3_reach"></div></td>
+                        <td><div><input type="text" name="wep3_tags"></div></td>
+                    </tr>
+                </table>
+    
+            </div>
+            <div class="minipage minipage-small">
+                <table  id="damage">
+                    <tr>
+                        <td></td>
+                        <td style="width: 70px;"><strong>Wounds</strong></td>
+                        <td><strong>Scars</strong></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><input type="checkbox" name="6a"></td>
+                        <td><input type="text" name="6s"></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><input type="checkbox" name="5a"><input type="checkbox" name="5b"></td>
+                        <td><input type="text" name="5s"></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><input type="checkbox" name="4a"><input type="checkbox" name="4b"></td>
+                        <td><input type="text" name="4s"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><input type="checkbox" name="3a""><input type="checkbox" name="3b"><input type="checkbox" name="3c"></td>
+                        <td><input type="text" name="3s"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><input type="checkbox" name="2a"><input type="checkbox" name="2b"><input type="checkbox" name="2c"><input type="checkbox" name="2d"></td>
+                        <td><input type="text" name="2s"></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><input type="checkbox" name="1a"><input type="checkbox" name="1b"><input type="checkbox" name="1c"><input type="checkbox" name="1d"><input type="checkbox" name="1e"></td>
+                        <td><input type="text" name="1s"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+    
+            <span style="width: 100%; display: inline-block;"></span>
+        </div>
+
+
+        <div class="minipage minipage-small" style="border-inline: 1px solid #000000;">
+            <div id="titles" class="text-center item-header" style="padding-top: 5px;">Titles</div>
+                <table id="title-table">
+                    <tr>
+                        <td><input type="text" name="exp1"></td>
+                        <td><input type="text" name="exp_mod1"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp2"></td>
+                        <td><input type="text" name="exp_mod2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp3"></td>
+                        <td><input type="text" name="exp_mod3"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp4"></td>
+                        <td><input type="text" name="exp_mod4"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp5"></td>
+                        <td><input type="text" name="exp_mod5"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp6"></td>
+                        <td><input type="text" name="exp_mod6"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="minipage minipage-medium">
+            <div class="text-center" style="padding-top: 5px;">Inventory <span style="font-size: 0.8em;" class="gray">(5+Might)</span></div>
+            <table id="inventory">
                 <tr>
-                    <td></td>
-                    <td style="width: 24%;"><strong>Wounds</strong></td>
-                    <td><strong>Scars</strong></td>
+                    <td><input type="text" name="inv1"></td>
+                    <td><input type="text" name="inv2"></td>
                 </tr>
                 <tr>
-                    <td>6</td>
-                    <td><input type="checkbox" name="6a"></td>
-                    <td><input type="text" name="6s"></td>
+                    <td><input type="text" name="inv3"></td>
+                    <td><input type="text" name="inv4"></td>
                 </tr>
                 <tr>
-                    <td>5</td>
-                    <td><input type="checkbox" name="5a"><input type="checkbox" name="5b"></td>
-                    <td><input type="text" name="5s"></td>
+                    <td><input type="text" name="inv5"></td>
+                    <td><input type="text" name="inv6"></td>
                 </tr>
                 <tr>
-                    <td>4</td>
-                    <td><input type="checkbox" name="4a"><input type="checkbox" name="4b"></td>
-                    <td><input type="text" name="4s"></td>
+                    <td><input type="text" name="inv7"></td>
+                    <td><input type="text" name="inv8"></td>
                 </tr>
                 <tr>
-                    <td>3</td>
-                    <td><input type="checkbox" name="3a""><input type="checkbox" name="3b"><input type="checkbox" name="3c"></td>
-                    <td><input type="text" name="3s"></td>
+                    <td><input type="text" name="inv9"></td>
+                    <td><input type="text" name="inv10"></td>
                 </tr>
                 <tr>
-                    <td>2</td>
-                    <td><input type="checkbox" name="2a"><input type="checkbox" name="2b"><input type="checkbox" name="2c"><input type="checkbox" name="2d"></td>
-                    <td><input type="text" name="2s"></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td><input type="checkbox" name="1a"><input type="checkbox" name="1b"><input type="checkbox" name="1c"><input type="checkbox" name="1d"><input type="checkbox" name="1e"></td>
-                    <td><input type="text" name="1s"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><input type="text" name="inv11"></td>
+                    <td><input type="text" name="inv12"></td>
                 </tr>
             </table>
         </div>
-
-        <div style="clear: both;"></div>
-
-        <div class="minipage minipage-large">
-            <table id="weapons">
-                <tr>
-                    <td style="width: 8em;">Weapon</td>
-                    <td style="width: auto;">Damage</td>
-                    <td style="width: auto;">Reach</td>
-                    <td style="width: 8em;">Tags</td>
-                </tr>
-                <tr>
-                    <td><div><input type="text" name="wep1"></div></td>
-                    <td><div><input type="text" name="wep1_dmg"></div></td>
-                    <td><div><input type="text" name="wep1_reach"></div></td>
-                    <td><div><input type="text" name="wep1_tags"></div></td>
-                </tr>
-                <tr>
-                    <td><div><input type="text" name="wep2"></div></td>
-                    <td><div><input type="text" name="wep2_dmg"></div></td>
-                    <td><div><input type="text" name="wep2_reach"></div></td>
-                    <td><div><input type="text" name="wep2_tags"></div></td>
-                </tr>
-                <tr>
-                    <td><div><input type="text" name="wep3"></div></td>
-                    <td><div><input type="text" name="wep3_dmg"></div></td>
-                    <td><div><input type="text" name="wep3_reach"></div></td>
-                    <td><div><input type="text" name="wep3_tags"></div></td>
-                </tr>
-            </table>
-        </div>
-
         <div class="minipage minipage-small">
-        <div class="text-center item-header" style="padding-top: 5px;">Experiences</div>
-            <table id="experiences">
-                <tr>
-                    <td><input type="text" name="exp_mod1"></td>
-                    <td><input type="text" name="exp1" style="width: 8.5em;"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="exp_mod2"></td>
-                    <td><input type="text" name="exp2" style="width: 8.5em;"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="exp_mod3"></td>
-                    <td><input type="text" name="exp3" style="width: 8.5em;"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="exp_mod4"></td>
-                    <td><input type="text" name="exp4" style="width: 8.5em;"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="exp_mod5"></td>
-                    <td><input type="text" name="exp5" style="width: 8.5em;"></td>
-                </tr>
-            </table>
-            <hr style="width: 8em;">
-            <div class="text-center item-header">Pocket</div>
+            <div class="text-center item-header" style="padding-block: 10px;">Pocket</div>
+            <!-- <hr style="width: 8em;"> -->
             <div class="center" style="width: fit-content;">
                 <textarea id="limitedTextarea" rows="5" cols="18" oninput="enforceMaxLines(this)"></textarea>
             </div>
         </div>
 
-        <div class="minipage minipage-small">
-            <div class="text-center" style="padding-top: 5px;">Inventory <span style="font-size: 0.8em;" class="gray">(5+Might)</span></div>
-            <table id="inventory">
-                <tr>
-                    <td><input type="text" name="inv1"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="inv2"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="inv3"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="inv4"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="inv5"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="inv6"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="inv7"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="inv8"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="inv9"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="inv10"></td>
-                </tr>
-            </table>
-        </div>
+        <div style="clear: both;"></div>
+
         <div style="width: 30%;">
             <span style="width: 100%;">Notes to Self</span>
             <textarea disabled style="resize: none; height: 15em; width: 50em;">
@@ -256,7 +273,7 @@ armor?
     Works as DT modifier, but could be fun with more active role
 guard break?
     On filled wound bar?
-Weakness as experience/title?
+Weaknesses as titles?
     Using weakness on roll gives advantage later?
 Scars as titles?
     Also make some example scars

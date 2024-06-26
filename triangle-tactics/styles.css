@@ -34,18 +34,34 @@ table {
   display: inline-block;
   vertical-align: top;
 }
-.minipage-half,
 .minipage-large {
-  width: 49%;
+  width: 55%;
+}
+.minipage-half {
+  width: 50%;
 }
 .minipage-small {
   width: 20%;
 }
+.minipage-smaller {
+  width: 10%;
+}
 .minipage-medium {
-  width: 30%;
+  width: 39%;
 }
 .text-center {
   text-align: center;
+}
+.distributer  {
+  
+  text-align: justify;
+  -ms-text-justify: distribute-all-lines;
+  text-justify: distribute-all-lines;
+}
+.distributer > div{
+  vertical-align: top;
+  display: inline-block;
+  *display: inline;
 }
 
 #character-info * {
@@ -99,8 +115,9 @@ input {
 }
 
 #damage {
-  border: 1px solid #000000;
-  border-right: 0;
+  /* border: 1px solid #000000;
+  border-left: 0;
+  border-top: 0; */
   padding-bottom: 5px;
   margin-bottom: 5px;
 }
@@ -114,7 +131,7 @@ input {
 }
 
 #damage input[type="text"] {
-  width: 80%;
+  width: 90%;
 }
 
 #weapons {
@@ -135,8 +152,12 @@ input {
   width: 100%;
 }
 
-#experiences tr,
-#experiences td,
+/* #experiences {
+  border-inline: 1px solid #000000;;
+} */
+
+#experience-table tr,
+#experience-table td,
 #inventory tr,
 #inventory td {
   border: 0;
@@ -146,12 +167,44 @@ input {
   padding-inline: 0px;
 }
 
-#experiences input,
+#experience-table input,
 #inventory input {
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
-  height: 100%;
+  margin-inline: 0;
+  padding-inline: 0;
+  /* height: 100%; */
   width: 100%;
+}
+
+#experience-table tr td:nth-child(1) {
+  padding-inline: 5px;
+}
+
+#experience-table tr td:nth-child(2) {
+  padding-right: 5px;
+  width: 20px;
+}
+#inventory tr td:nth-child(2) {
+  padding-left: 5px;
+}
+#inventory tr td:nth-child(1) {
+  padding-right: 5px;
+}
+
+#stance-table {
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+#stance-table tr td {
+  padding-block: 5px;
+  padding-right: 5px;
+  font-weight: bolder;
+}
+
+.stances {
+  border: 1px solid #000000;
+  border-left: 0;
+  padding-block: 10px;
 }
 
 #limitedTextarea {
