@@ -191,77 +191,107 @@
                     </tr>
                 </table>
             </div>
-    
             <span style="width: 100%; display: inline-block;"></span>
         </div>
 
+            <div style="clear: both;"></div>
 
-        <div class="minipage minipage-small" style="border-inline: 1px solid #000000;">
-            <div id="titles" class="text-center item-header" style="padding-top: 5px;">Titles</div>
-                <table id="title-table">
+        <div class="distributer">
+            <div class="minipage">
+                <div class="text-center item-header" style="padding-block: 10px;">Coin Pouch</div>
+                <div class="currency" style="width: fit-content;">
+                    <table id="currency-table">
+                        <tr>
+                            <td><input disabled value="Copper"></input></td>
+                            <td><input type="text" name="cc"></td>
+                        </tr>
+                        <tr>
+                            <td><input disabled value="Bronze"></input></td>
+                            <td><input type="text" name="bc"></td>
+                        </tr>
+                        <tr>
+                            <td><input disabled value="Silver"></input></td>
+                            <td><input type="text" name="sc"></td>
+                        </tr>
+                        <tr>
+                            <td><input disabled value="Gold"></input></td>
+                            <td><input type="text" name="gc"></td>
+                        </tr>
+                        <tr>
+                            <td><input disabled value="Platinum"></input></td>
+                            <td><input type="text" name="pc"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="minipage minipage-medium">
+                <div class="text-center" style="padding-top: 5px;">Inventory<span style="font-size: 0.8em;" class="gray"> (5+Might)</span></div>
+                <table id="inventory">
                     <tr>
-                        <td><input type="text" name="exp1"></td>
-                        <td><input type="text" name="exp_mod1"></td>
+                        <td><input type="text" name="inv1"></td>
+                        <td><input type="text" name="inv2"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="exp2"></td>
-                        <td><input type="text" name="exp_mod2"></td>
+                        <td><input type="text" name="inv3"></td>
+                        <td><input type="text" name="inv4"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="exp3"></td>
-                        <td><input type="text" name="exp_mod3"></td>
+                        <td><input type="text" name="inv5"></td>
+                        <td><input type="text" name="inv6"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="exp4"></td>
-                        <td><input type="text" name="exp_mod4"></td>
+                        <td><input type="text" name="inv7"></td>
+                        <td><input type="text" name="inv8"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="exp5"></td>
-                        <td><input type="text" name="exp_mod5"></td>
+                        <td><input type="text" name="inv9"></td>
+                        <td><input type="text" name="inv10"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="exp6"></td>
-                        <td><input type="text" name="exp_mod6"></td>
+                        <td><input type="text" name="inv11"></td>
+                        <td><input type="text" name="inv12"></td>
                     </tr>
                 </table>
             </div>
-        </div>
-        
-        <div class="minipage minipage-medium">
-            <div class="text-center" style="padding-top: 5px;">Inventory <span style="font-size: 0.8em;" class="gray">(5+Might)</span></div>
-            <table id="inventory">
-                <tr>
-                    <td><input type="text" name="inv1"></td>
-                    <td><input type="text" name="inv2"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="inv3"></td>
-                    <td><input type="text" name="inv4"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="inv5"></td>
-                    <td><input type="text" name="inv6"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="inv7"></td>
-                    <td><input type="text" name="inv8"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="inv9"></td>
-                    <td><input type="text" name="inv10"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="inv11"></td>
-                    <td><input type="text" name="inv12"></td>
-                </tr>
-            </table>
-        </div>
-        <div class="minipage minipage-small">
-            <div class="text-center item-header" style="padding-block: 10px;">Pocket</div>
-            <!-- <hr style="width: 8em;"> -->
-            <div class="center" style="width: fit-content;">
-                <textarea id="limitedTextarea" rows="5" cols="18" oninput="enforceMaxLines(this)"></textarea>
+            <div class="minipage minipage-small">
+                <div class="text-center item-header" style="padding-block: 10px;">Pocket</div>
+                <!-- <hr style="width: 8em;"> -->
+                <div class="center" style="width: fit-content;">
+                    <textarea id="limitedTextarea" rows="5" cols="18" oninput="enforceMaxLines(this)"></textarea>
+                </div>
             </div>
+
+            <div class="minipage minipage-small" style="border-inline: 1px solid #000000;">
+                <div id="titles" class="text-center item-header" style="padding-top: 5px;">Titles</div>
+                    <table id="title-table">
+                        <tr>
+                            <td><input type="text" name="exp1" ></td>
+                            <td><input type="text" name="exp_mod1"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="exp2"></td>
+                            <td><input type="text" name="exp_mod2"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="exp3"></td>
+                            <td><input type="text" name="exp_mod3"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="exp4"></td>
+                            <td><input type="text" name="exp_mod4"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="exp5"></td>
+                            <td><input type="text" name="exp_mod5"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="exp6"></td>
+                            <td><input type="text" name="exp_mod6"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <span style="width: 100%; display: inline-block;"></span>
         </div>
 
         <div style="clear: both;"></div>

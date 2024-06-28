@@ -1,9 +1,11 @@
 /** For screen preview **/
 @media screen {
-  body { background: #404040 }
+  body {
+    background: #404040;
+  }
   .sheet {
     background: #eeeeee;
-    box-shadow: 0 .5mm 2mm rgba(0,0,0,.3);
+    box-shadow: 0 0.5mm 2mm rgba(0, 0, 0, 0.3);
     margin: 5mm auto;
   }
 }
@@ -12,12 +14,21 @@
   margin-left: auto;
   margin-right: auto;
 }
-  
+
 body {
-  font-family: Arial, sans-serif;
-  font-size: small;
+  font-family: Gabriola, Dungeon, Papyrus, Arial, sans-serif;
+  font-size: medium;
   line-height: 1.1;
   margin: 0.5cm;
+}
+input {
+  border: 1px solid transparent;
+  border-bottom: 1px solid gray;
+  background-color: #eeeeee;
+  font-family: Gabriola, Dungeon, Papyrus, Arial, sans-serif;
+}
+textarea {
+  font-family: Gabriola, Dungeon, Papyrus, Arial, sans-serif;
 }
 table {
   width: 100%;
@@ -52,13 +63,12 @@ table {
 .text-center {
   text-align: center;
 }
-.distributer  {
-  
+.distributer {
   text-align: justify;
   -ms-text-justify: distribute-all-lines;
   text-justify: distribute-all-lines;
 }
-.distributer > div{
+.distributer > div {
   vertical-align: top;
   display: inline-block;
   *display: inline;
@@ -84,14 +94,8 @@ table {
   text-align: center;
 }
 
-.stats input { 
-  text-align: center; 
-}
-
-input {
-  border: 1px solid transparent;
-  border-bottom: 1px solid gray;
-  background-color: #eeeeee;
+.stats input {
+  text-align: center;
 }
 
 #damage-thresholds-container {
@@ -152,14 +156,16 @@ input {
   width: 100%;
 }
 
-/* #experiences {
+/* #titles {
   border-inline: 1px solid #000000;;
 } */
 
-#experience-table tr,
-#experience-table td,
+#title-table tr,
+#title-table td,
 #inventory tr,
-#inventory td {
+#inventory td,
+#currency-table tr,
+#currency-table td {
   border: 0;
   margin: 0 0 0 0;
   padding: 5px 0 0 0;
@@ -167,7 +173,7 @@ input {
   padding-inline: 0px;
 }
 
-#experience-table input,
+#title-table input,
 #inventory input {
   margin-inline: 0;
   padding-inline: 0;
@@ -175,11 +181,11 @@ input {
   width: 100%;
 }
 
-#experience-table tr td:nth-child(1) {
+#title-table tr td:nth-child(1) {
   padding-inline: 5px;
 }
 
-#experience-table tr td:nth-child(2) {
+#title-table tr td:nth-child(2) {
   padding-right: 5px;
   width: 20px;
 }
@@ -201,10 +207,37 @@ input {
   font-weight: bolder;
 }
 
+/* .currency,  */
 .stances {
   border: 1px solid #000000;
   border-left: 0;
   padding-block: 10px;
+}
+
+#currency-table tr td:nth-child(2) input {
+  width: 30px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  /* border: 0; */
+  /* border-inline: 1px solid gray; */
+}
+#currency-table tr td:nth-child(1) input {
+  width: 45px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  /* border: 0; */
+  /* border-inline: 1px solid gray; */
+}
+
+#currency-table tr td:nth-child(2) {
+  padding-left: 5px;
+}
+
+#currency-table tr td input {
+  border-bottom: 1px solid gray;
+  margin-bottom: 0;
+  padding-block: 5px;
+  padding-right: 5px;
 }
 
 #limitedTextarea {
