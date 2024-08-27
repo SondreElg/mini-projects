@@ -62,19 +62,31 @@
             <div id="damage-thresholds-container" class="text-center">
                 <table id="damage-thresholds">
                     <tr>
-                        <td style="width: 2em;">-5</td>
+                        <td style="width: 2em;">
+                            <div display="flex">
+                                <div id="beyond-container" style="position: relative; z-index: 1; font-size: xx-large; margin: 0; padding: 0; padding-top: 8px; margin-top: -5px;">&#9929;
+                                    <div style="position: absolute; top: 0; width: 100%; border: 1px;">
+                                        <input type="text" style="font-size: medium; z-index: 3; width: 1em; background-color: transparent; border: 0; margin-top: 13px" name="pdr">
+                                        <!-- <p style=" margin-left: -0.3em; font-size: small;">+5</p> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
                         <td style="width: 2em;"><input type="text" name="hit" style="width: 2em;"></td>
                         <td style="width: 2em;"><input type="text" name="heavy" style="width: 2em;"></td>
                         <td style="width: 2em;"><input type="text" name="brutal" style="width: 2em;"></td>
                         <td style="width: 2em;">
                             <div>
-                                <div style="font-size: xx-large; margin: 0; padding: 0;">⟳</div>
-                                <div style="position: absolute; top: 150px; left: 520px; font-size: smaller;">+5</div>
+                                <div id="beyond-container" style="position: relative; font-size: xx-large; margin: 0; padding: 0; padding-top: 2px; margin-bottom: -2px;">⟳
+                                    <div style="position: absolute; top: 0; width: 100%;">
+                                        <p style=" margin-left: -0.3em; font-size: small;">+5</p>
+                                    </div>
+                                </div>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td style="border-left: 0;">Broken</td>
+                        <td style="border-left: 0;">PDR</td>
                         <td>Hit</td>
                         <td>Heavy</td>
                         <td>Brutal</td>
@@ -140,7 +152,6 @@
                         <td><div><input type="text" name="wep3_tags"></div></td>
                     </tr>
                 </table>
-    
             </div>
             <div class="minipage minipage-small">
                 <table  id="damage">
@@ -194,38 +205,40 @@
             <span style="width: 100%; display: inline-block;"></span>
         </div>
 
-            <div style="clear: both;"></div>
+        <div style="clear: both;"></div>
 
         <div class="distributer">
             <div class="minipage">
-                <div class="text-center item-header" style="padding-block: 10px;">Coin Pouch</div>
-                <div class="currency" style="width: fit-content;">
-                    <table id="currency-table">
-                        <tr>
-                            <td><input disabled value="Copper"></input></td>
-                            <td><input type="text" name="cc"></td>
-                        </tr>
-                        <tr>
-                            <td><input disabled value="Bronze"></input></td>
-                            <td><input type="text" name="bc"></td>
-                        </tr>
-                        <tr>
-                            <td><input disabled value="Silver"></input></td>
-                            <td><input type="text" name="sc"></td>
-                        </tr>
-                        <tr>
-                            <td><input disabled value="Gold"></input></td>
-                            <td><input type="text" name="gc"></td>
-                        </tr>
-                        <tr>
-                            <td><input disabled value="Platinum"></input></td>
-                            <td><input type="text" name="pc"></td>
-                        </tr>
-                    </table>
+                <div id="coin-pouch">
+                    <div class="text-center item-header" style="padding-top: 5px;">Coin Pouch</div>
+                    <div class="currency" style="width: fit-content;">
+                        <table id="currency-table">
+                            <tr>
+                                <td><input disabled value="Copper"></input></td>
+                                <td><input type="text" name="cc"></td>
+                            </tr>
+                            <tr>
+                                <td><input disabled value="Bronze"></input></td>
+                                <td><input type="text" name="bc"></td>
+                            </tr>
+                            <tr>
+                                <td><input disabled value="Silver"></input></td>
+                                <td><input type="text" name="sc"></td>
+                            </tr>
+                            <tr>
+                                <td><input disabled value="Gold"></input></td>
+                                <td><input type="text" name="gc"></td>
+                            </tr>
+                            <tr>
+                                <td><input disabled value="Platinum"></input></td>
+                                <td><input type="text" name="pc" style="border-bottom: 1px solid gray;"></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="minipage minipage-medium">
-                <div class="text-center" style="padding-top: 5px;">Inventory<span style="font-size: 0.8em;" class="gray"> (5+Might)</span></div>
+                <div class="text-center item-header" style="padding-top: 5px;">Inventory<span style="font-size: 0.8em;" class="gray"> (5+Might)</span></div>
                 <table id="inventory">
                     <tr>
                         <td><input type="text" name="inv1"></td>
@@ -253,48 +266,50 @@
                     </tr>
                 </table>
             </div>
-            <div class="minipage minipage-small">
-                <div class="text-center item-header" style="padding-block: 10px;">Pocket</div>
+            <div class="minipage">
+                <div class="text-center item-header" style="padding-bottom: 25px; padding-top: 5px;">Pocket</div>
                 <!-- <hr style="width: 8em;"> -->
                 <div class="center" style="width: fit-content;">
                     <textarea id="limitedTextarea" rows="5" cols="18" oninput="enforceMaxLines(this)"></textarea>
                 </div>
             </div>
-
-            <div class="minipage minipage-small" style="border-inline: 1px solid #000000;">
+            <div id="titles-minipage" class="minipage minipage-small">
                 <div id="titles" class="text-center item-header" style="padding-top: 5px;">Titles</div>
-                    <table id="title-table">
-                        <tr>
-                            <td><input type="text" name="exp1" ></td>
-                            <td><input type="text" name="exp_mod1"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="exp2"></td>
-                            <td><input type="text" name="exp_mod2"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="exp3"></td>
-                            <td><input type="text" name="exp_mod3"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="exp4"></td>
-                            <td><input type="text" name="exp_mod4"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="exp5"></td>
-                            <td><input type="text" name="exp_mod5"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="exp6"></td>
-                            <td><input type="text" name="exp_mod6"></td>
-                        </tr>
-                    </table>
-                </div>
+                <table id="title-table">
+                    <tr>
+                        <td><input type="text" name="exp1" ></td>
+                        <td><input type="text" name="exp_mod1"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp2"></td>
+                        <td><input type="text" name="exp_mod2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp3"></td>
+                        <td><input type="text" name="exp_mod3"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp4"></td>
+                        <td><input type="text" name="exp_mod4"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp5"></td>
+                        <td><input type="text" name="exp_mod5"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp6"></td>
+                        <td><input type="text" name="exp_mod6"></td>
+                    </tr>
+                </table>
             </div>
             <span style="width: 100%; display: inline-block;"></span>
         </div>
 
         <div style="clear: both;"></div>
+
+        <div class="center">
+
+        </div>
 
         <div style="width: 30%;">
             <span style="width: 100%;">Notes to Self</span>
@@ -307,12 +322,20 @@ Weaknesses as titles?
     Using weakness on roll gives advantage later?
 Scars as titles?
     Also make some example scars
+Speed
             </textarea>
         </div>
     </section>
     <script>
         localStorage = window['localStorage']
         loadState()
+        document.addEventListener('change', function(event) {
+            saveChange(event.target);
+        }, true);
+
+        function tabOnEnter(event) {
+            if(event.keyCode === 13) { event.preventDefault(); this.dispatchEvent(new Event('keydown', { keyCode: 9 })); }
+        }
 
         function enforceMaxLines(textarea) {
             const maxRows = textarea.rows+1;
@@ -324,7 +347,7 @@ Scars as titles?
             }
         }
         function saveChange(htmlObj) {
-            localStorage[htmlObj.name] = htmlObj.value
+            localStorage[htmlObj.name] = htmlObj.value;
         }
         function loadState() {
             for (const [key, val] of Object.entries(localStorage)) {
