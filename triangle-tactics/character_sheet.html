@@ -26,18 +26,17 @@
                 <tr class="odd">
                 <td style="text-align: center;"><input name="name" size="10em"></td>
                 <td style="text-align: center;"><input name="ancestry" size="10em"></td>
-                <td style="text-align: center;"><input name="exp_rem" size="10em"></td>
-                <td style="text-align: center;"><input name="exp_tot" size="10em"></td>
+                <!-- <td style="text-align: center;"><input name="exp_rem" size="10em"></td> -->
+                <td style="text-align: center;"><input name="level" size="10em"></td>
                 </tr>
                 <tr class="even">
                 <td style="text-align: center;"><span
                 style="color: gray">Name</span></td>
                 <td style="text-align: center;"><span
                 style="color: gray">Ancestry</span></td>
-                <td style="text-align: center;"><span style="color: gray">Unused
-                exp</span></td>
-                <td style="text-align: center;"><span style="color: gray">Total
-                exp</span></td>
+                <!-- <td style="text-align: center;"><span style="color: gray">Unused
+                exp</span></td> -->
+                <td style="text-align: center;"><span style="color: gray">Level</span></td>
                 </tr>
                 </tbody>
             </table>
@@ -62,7 +61,7 @@
             <div id="damage-thresholds-container" class="text-center">
                 <table id="damage-thresholds">
                     <tr>
-                        <td style="width: 2em;">
+                        <td style="width: 3.6em;">
                             <div display="flex">
                                 <div id="beyond-container" style="position: relative; z-index: 1; font-size: xx-large; margin: 0; padding: 0; padding-top: 8px; margin-top: -5px;">&#9929;
                                     <div style="position: absolute; top: 0; width: 100%; border: 1px;">
@@ -75,7 +74,7 @@
                         <td style="width: 2em;"><input type="text" name="hit" style="width: 2em;"></td>
                         <td style="width: 2em;"><input type="text" name="heavy" style="width: 2em;"></td>
                         <td style="width: 2em;"><input type="text" name="brutal" style="width: 2em;"></td>
-                        <td style="width: 2em;">
+                        <td style="width: 3.6em;">
                             <div>
                                 <div id="beyond-container" style="position: relative; font-size: xx-large; margin: 0; padding: 0; padding-top: 2px; margin-bottom: -2px;">⟳
                                     <div style="position: absolute; top: 0; width: 100%;">
@@ -160,14 +159,16 @@
                         <td style="width: 70px;"><strong>Wounds</strong></td>
                         <td><strong>Scars</strong></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>6</td>
                         <td><input type="checkbox" name="6a"></td>
                         <td><input type="text" name="6s"></td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <td>5</td>
-                        <td><input type="checkbox" name="5a"><input type="checkbox" name="5b"></td>
+                        <td><input type="checkbox" name="5a">
+                            <!-- <input type="checkbox" name="5b"> -->
+                        </td>
                         <td><input type="text" name="5s"></td>
                     </tr>
                     <tr>
@@ -187,17 +188,16 @@
                     </tr>
                     <tr>
                         <td>1</td>
-                        <td><input type="checkbox" name="1a"><input type="checkbox" name="1b"><input type="checkbox" name="1c"><input type="checkbox" name="1d"><input type="checkbox" name="1e"></td>
+                        <td><input type="checkbox" name="1a"><input type="checkbox" name="1b"><input type="checkbox" name="1c"><input type="checkbox" name="1d"></td>
                         <td><input type="text" name="1s"></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td></td>
-                        <td></td>
+                        <td colspan="2"><input type="checkbox" name="sa"><input type="checkbox" name="sb"><input type="checkbox" name="sc"><input type="checkbox" name="sd"><input type="checkbox" name="se"><input type="checkbox" name="sf"><input type="checkbox" name="sg"><input type="checkbox" name="sh"><input type="checkbox" name="si"></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td></td>
+                        <td><strong>Strain</strong></td>
                         <td></td>
                     </tr>
                 </table>
@@ -212,7 +212,7 @@
                 <div id="coin-pouch">
                     <div class="text-center item-header" style="padding-top: 5px;">Coin Pouch</div>
                     <div class="currency" style="width: fit-content;">
-                        <table id="currency-table">
+                        <table id="currency-table" class="list-table">
                             <tr>
                                 <td><input disabled value="Copper"></input></td>
                                 <td><input type="text" name="cc"></td>
@@ -275,9 +275,9 @@
             </div>
             <div id="titles-minipage" class="minipage minipage-small">
                 <div id="titles" class="text-center item-header" style="padding-top: 5px;">Titles</div>
-                <table id="title-table">
+                <table id="title-table" class="list-table">
                     <tr>
-                        <td><input type="text" name="exp1" ></td>
+                        <td><input type="text" name="exp1"></td>
                         <td><input type="text" name="exp_mod1"></td>
                     </tr>
                     <tr>
@@ -299,6 +299,29 @@
                     <tr>
                         <td><input type="text" name="exp6"></td>
                         <td><input type="text" name="exp_mod6"></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="deeds-minipage" class="minipage minipage-small">
+                <div id="deeds" class="text-center item-header" style="padding-top: 5px;">Deeds</div>
+                <table id="deeds-table" class="list-table">
+                    <tr>
+                        <td><input type="text" name="deed1"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="deed2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="deed3"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="deed4"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="deed5"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="deed6"></td>
                     </tr>
                 </table>
             </div>

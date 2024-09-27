@@ -27,6 +27,21 @@ input {
   background-color: transparent;
   font-family: Gabriola, Dungeon, Papyrus, Arial, sans-serif;
 }
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  /* display: flex; */
+  align-content: center;
+  justify-content: center;
+  font-size: large;
+  padding: 0.31rem;
+  border: 0.25px solid black;
+  border-radius: 0.5rem;
+  margin-inline: 1px;
+}
+input[type="checkbox"]:checked {
+  background-color: black;
+}
 textarea {
   font-family: Gabriola, Dungeon, Papyrus, Arial, sans-serif;
 }
@@ -148,6 +163,15 @@ table {
 #damage input[type="text"] {
   width: 90%;
 }
+#damage input[type="checkbox"]:nth-last-child(-n+3):not(:checked) {
+  border-color: red;
+}
+#damage input[type="checkbox"]:nth-child(-n+6):not(:nth-last-child(-n+1)):not(:checked) {
+  border-color: #FF5555;
+}
+#damage input[type="checkbox"]:nth-child(-n+3):not(:nth-last-child(-n+2)):not(:checked) {
+  border-color: gray;
+}
 
 #weapons {
   table-layout: fixed;
@@ -171,18 +195,15 @@ table {
   border-inline: 1px solid #000000;;
 } */
 
-#title-table tr,
-#title-table td,
-#inventory tr,
-#inventory td,
-#currency-table tr,
-#currency-table td {
+.list-table tr,
+.list-table td {
   border: 0;
   padding: 5px 0 0 0;
   margin: 5px 0 0 0;
   padding-inline: 0px;
 }
 
+#deeds-table input,
 #title-table input,
 #inventory input {
   margin-inline: 0;
