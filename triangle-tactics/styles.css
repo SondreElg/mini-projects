@@ -39,9 +39,13 @@ input {
   border-radius: 0.5rem;
   margin-inline: 1px;
 }
+.triangles {
+  padding-left: 12px;
+}
 .triangles input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
+  cursor: pointer;
   margin: 0px 5px;
   width: 12px; 
   height: 12px;
@@ -68,6 +72,13 @@ input {
   transform: rotate(-45deg);
   left: -0.3px;
   top: 2.3px;
+}
+.triangles input[type="checkbox"]:nth-last-child(-n+3) {
+  border: 2px solid gray; 
+}
+.triangles input[type="checkbox"]:nth-last-child(-n+3):before {
+  border-top: 2px solid gray; 
+  border-bottom: 10px solid #eeeeee;
 }
 input[type="checkbox"]:checked {
   background-color: black;
@@ -116,7 +127,6 @@ table {
 .distributer > div {
   vertical-align: top;
   display: inline-block;
-  *display: inline;
 }
 
 #character-info * {
@@ -139,7 +149,7 @@ table {
   text-align: center;
 }
 
-#ability-scores input {
+.centered-input input {
   text-align: center;
 }
 
@@ -163,9 +173,6 @@ table {
   padding: 5px 5px 0 5px;
 }
 
-#damage-thresholds input {
-  text-align: center;
-}
 
 #beyond-container {
   font-family: Arial, sans-serif;
@@ -233,9 +240,7 @@ table {
   padding-inline: 0px;
 }
 
-#deeds-table input,
-#title-table input,
-#inventory input {
+.wide-input input {
   margin-inline: 0;
   padding-inline: 0;
   /* height: 100%; */
@@ -256,10 +261,13 @@ table {
 #inventory tr td:nth-child(1) {
   padding-right: 2.5px;
 }
+#abilities tr td {
+  padding-inline: 2.5px;
+}
 
 #stance-table {
-  padding-right: 10px;
-  margin-right: 10px;
+  padding-left: 5px;
+  margin-left: 5px;
 }
 
 #stance-table tr td {
@@ -271,7 +279,7 @@ table {
 /* .currency,  */
 .stances {
   border: 1px solid #000000;
-  border-left: 0;
+  border-right: 0;
   padding-block: 10px;
 }
 
@@ -306,4 +314,20 @@ table {
   word-wrap: break-word; /* Break long words */
   background-color: transparent;
   /* border: double; */
+}
+
+.ring-part {
+  cursor: pointer;
+  fill: #eeeeee; /* Default color */
+  stroke: #000;
+  stroke-width: 1px;
+}
+/* svg .ring-part:nth-last-child(-n+6) {
+  stroke: orange;
+} */
+svg .ring-part:nth-last-child(-n+3) {
+  stroke: grey;
+}
+.ring-part.active {
+  fill: #000; /* Toggled color */
 }

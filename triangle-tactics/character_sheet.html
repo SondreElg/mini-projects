@@ -44,7 +44,7 @@
         <div style="width: 60%; margin-left: auto; margin-right: auto; padding-bottom: 12px;">
             <div class="text-center">
                 <table id="ability-scores">
-                    <tr >
+                    <tr class="centered-input">
                         <td><input type="text" name="might" style="width: 30px;"></td>
                         <td><input type="text" name="agility" style="width: 30px;"></td>
                         <td><input type="text" name="intelligence" style="width: 30px;"></td>
@@ -60,12 +60,12 @@
             </div>
             <div id="damage-thresholds-container" class="text-center">
                 <table id="damage-thresholds">
-                    <tr>
+                    <tr class="centered-input">
                         <td style="width: 3.6em;">
                             <div display="flex">
                                 <div id="beyond-container" style="position: relative; z-index: 1; font-size: xx-large; margin: 0; padding: 0; padding-top: 8px; margin-top: -5px;">&#9929;
                                     <div style="position: absolute; top: 0; width: 100%; border: 1px;">
-                                        <input type="text" style="font-size: medium; z-index: 3; width: 1em; background-color: transparent; border: 0; margin-top: 13px" name="pdr">
+                                        <input type="text" style="font-size: medium; z-index: 3; width: 1em; background-color: transparent; border: 0; margin-top: 13px" name="guard">
                                         <!-- <p style=" margin-left: -0.3em; font-size: small;">+5</p> -->
                                     </div>
                                 </div>
@@ -85,7 +85,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="border-left: 0;">PDR</td>
+                        <td style="border-left: 0;">Guard</td>
                         <td>Hit</td>
                         <td>Heavy</td>
                         <td>Brutal</td>
@@ -94,37 +94,32 @@
                 </table>
                 <span class="gray"><strong>Damage Thresholds</strong></span>
             </div>
+            <div class="text-center item-header center" style="padding-block: 15px;">
+                <table id="damage-table" class="center" style="width: fit-content">
+                    <tr id="adrenaline-row" class="centered-input">
+                        <td style="width: 60px">Focus</td>
+                        <td class="triangles triangles-up"><input type="checkbox" name="sa"><input type="checkbox" name="sb"><input type="checkbox" name="sc"><input type="checkbox" name="sd"><input type="checkbox" name="se"><input type="checkbox" name="sf"><input type="checkbox" name="sg"><input type="checkbox" name="sh"><input type="checkbox" name="si"></td>
+                        <td rowspan="2" style="width: 60px"><input type="text" name="bonus" style="width: 35px;"></td>
+                    </tr>
+                    <tr id="exhaustion-row">
+                        <td style="width: 60px">Fatigue</td>
+                        <td class="triangles triangles-down"><input type="checkbox" name="sa"><input type="checkbox" name="sb"><input type="checkbox" name="sc"><input type="checkbox" name="sd"><input type="checkbox" name="se"><input type="checkbox" name="sf"><input type="checkbox" name="sg"><input type="checkbox" name="sh"><input type="checkbox" name="si"></td>
+                        <!-- <td style="width: 60px">Bonus</td> -->
+                    </tr>
+                </table>
+            </div>
         </div>
 
 
+
         <div class="distributer">
-            <div class="minipage minipage-smaller">
-                <div class="stances" style="width: fit-content;">
-                    <table id="stance-table">
-                        <tr>
-                            <td>Attacking</td>
-                        </tr>
-                        <tr>
-                            <td >
-                                <hr>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Defending</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <hr>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Controlling</td>
-                        </tr>
-                    </table>
+            <div class="minipage-smaller">
+                <div class="text-center" style="display: flex; align-items: center; margin-top: -20px; height: 90px; width: 90px; background-color: white;">
+                    <div class="text-center item-header" style="margin: auto;">Armor & <br> Resistances</div>
                 </div>
             </div>
-    
             <div class="minipage minipage-large">
+                
                 <table id="weapons">
                     <tr>
                         <td style="width: 8em;">Weapon</td>
@@ -152,63 +147,108 @@
                     </tr>
                 </table>
             </div>
-            <div class="minipage minipage-small">
-                <table  id="damage">
-                    <tr>
-                        <td></td>
-                        <td style="width: 70px;"><strong>Wounds</strong></td>
-                        <td><strong>Scars</strong></td>
-                    </tr>
-                    <!-- <tr>
-                        <td>6</td>
-                        <td><input type="checkbox" name="6a"></td>
-                        <td><input type="text" name="6s"></td>
-                    </tr> -->
-                    <tr>
-                        <td>5</td>
-                        <td><input type="checkbox" name="5a">
-                            <!-- <input type="checkbox" name="5b"> -->
-                        </td>
-                        <td><input type="text" name="5s"></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td><input type="checkbox" name="4a"><input type="checkbox" name="4b"></td>
-                        <td><input type="text" name="4s"></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td><input type="checkbox" name="3a""><input type="checkbox" name="3b"><input type="checkbox" name="3c"></td>
-                        <td><input type="text" name="3s"></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td><input type="checkbox" name="2a"><input type="checkbox" name="2b"><input type="checkbox" name="2c"><input type="checkbox" name="2d"></td>
-                        <td><input type="text" name="2s"></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td><input type="checkbox" name="1a"><input type="checkbox" name="1b"><input type="checkbox" name="1c"><input type="checkbox" name="1d"></td>
-                        <td><input type="text" name="1s"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td colspan="2"><input type="checkbox" name="sa"><input type="checkbox" name="sb"><input type="checkbox" name="sc"><input type="checkbox" name="sd"><input type="checkbox" name="se"><input type="checkbox" name="sf"><input type="checkbox" name="sg"><input type="checkbox" name="sh"><input type="checkbox" name="si"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><strong>Strain</strong></td>
-                        <td><input type="text" name="strain" style="width: 10px;"> / <input type="text" name="strain_max" style="width: 10px;"></td>
-                    </tr>
-                </table>
+
+            <div class="minipage minipage-smaller" style="margin-top: -60px;">
+                <div class="stances" style="width: fit-content;">
+                    <table id="stance-table">
+                        <tr>
+                            <td>Attacking</td>
+                        </tr>
+                        <tr>
+                            <td >
+                                <hr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Defending</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <hr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Controlling</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
+            
             <span style="width: 100%; display: inline-block;"></span>
         </div>
 
         <div style="clear: both;"></div>
 
         <div class="distributer">
-            <div class="minipage">
+            <div id="scars-minipage" class="minipage minipage-small">
+                <div id="scars" class="text-center item-header" style="padding-top: 5px;">Scars</div>
+                <table id="scars-table" class="list-table wide-input">
+                    <tr>
+                        <td><input type="text" name="scar1"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="scar2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="scar3"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="scar4"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="scar5"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="scar6"></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="strain-minipage">
+                <div class="text-center" style="width: 100%;">
+                    <span style="margin-inline: auto;">Strain</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <svg width="200" height="200" viewBox="0 0 200 200">
+            </svg>
+                    <div class="text-center center" style="position: relative; top: -50%; left: -50%; width: 0; display: flex; justify-content: center; align-items: center;">
+                        <span class="text-center"">Pressure<br>Die</span>
+                    </div>
+                </div>
+            </div>
+            <div id="titles-minipage" class="minipage minipage-small">
+                <div id="titles" class="text-center item-header" style="padding-top: 5px;">Titles</div>
+                <table id="title-table" class="list-table wide-input">
+                    <tr>
+                        <td><input type="text" name="exp1"></td>
+                        <td><input type="text" name="exp_mod1"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp2"></td>
+                        <td><input type="text" name="exp_mod2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp3"></td>
+                        <td><input type="text" name="exp_mod3"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp4"></td>
+                        <td><input type="text" name="exp_mod4"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp5"></td>
+                        <td><input type="text" name="exp_mod5"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp6"></td>
+                        <td><input type="text" name="exp_mod6"></td>
+                    </tr>
+                </table>
+            </div>
+            <span style="width: 100%; display: inline-block;"></span>
+        </div>
+
+        <div class="distributer">
+            <div class="minipage minipage-small">
                 <div id="coin-pouch">
                     <div class="text-center item-header" style="padding-top: 5px;">Coin Pouch</div>
                     <div class="currency" style="width: fit-content;">
@@ -239,7 +279,7 @@
             </div>
             <div class="minipage minipage-medium">
                 <div class="text-center item-header" style="padding-top: 5px;">Inventory<span style="font-size: 0.8em;" class="gray"> (5+Might)</span></div>
-                <table id="inventory">
+                <table id="inventory" class="wide-input">
                     <tr>
                         <td><input type="text" name="inv1"></td>
                         <td><input type="text" name="inv2"></td>
@@ -266,7 +306,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="minipage">
+            <div class="minipage minipage-small">
                 <div class="text-center item-header" style="padding-bottom: 25px; padding-top: 5px;">Pocket</div>
                 <!-- <hr style="width: 8em;"> -->
                 <div class="center" style="width: fit-content;">
@@ -274,53 +314,72 @@
                 </div>
             </div>
             <span style="width: 100%; display: inline-block;"></span>
-            <br/>
-            <div id="titles-minipage" class="minipage minipage-small">
-                <div id="titles" class="text-center item-header" style="padding-top: 5px;">Titles</div>
-                <table id="title-table" class="list-table">
-                    <tr>
-                        <td><input type="text" name="exp1"></td>
-                        <td><input type="text" name="exp_mod1"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="exp2"></td>
-                        <td><input type="text" name="exp_mod2"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="exp3"></td>
-                        <td><input type="text" name="exp_mod3"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="exp4"></td>
-                        <td><input type="text" name="exp_mod4"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="exp5"></td>
-                        <td><input type="text" name="exp_mod5"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="exp6"></td>
-                        <td><input type="text" name="exp_mod6"></td>
-                    </tr>
-                </table>
-            </div>
-            <div id="damage-table" class="minipage minipage-medium">
-                <div class="text-center item-header center" style="padding-top: 5px;">Damage</div>
+        </div>
 
-                <table id="damage-table" class="center">
-                    <tr id="adrenaline-row">
-                        <td>Focus</td>
-                        <td class="triangles triangles-up"><input type="checkbox" name="sa"><input type="checkbox" name="sb"><input type="checkbox" name="sc"><input type="checkbox" name="sd"><input type="checkbox" name="se"><input type="checkbox" name="sf"><input type="checkbox" name="sg"><input type="checkbox" name="sh"><input type="checkbox" name="si"></td>
+        <div style="clear: both;"></div>
+
+        <div class="distributer">
+            <div id="languages-minipage" class="minipage minipage-small" style="margin-left: 0px">
+                <div id="languages" class="text-center item-header" style="padding-top: 5px;">Languages</div>
+                <table id="languages-table" class="list-table wide-input">
+                    <tr>
+                        <td><input type="text" name="lang1"></td>
                     </tr>
-                    <tr id="exhaustion-row">
-                        <td>Fatigue</td>
-                        <td class="triangles triangles-down"><input type="checkbox" name="sa"><input type="checkbox" name="sb"><input type="checkbox" name="sc"><input type="checkbox" name="sd"><input type="checkbox" name="se"><input type="checkbox" name="sf"><input type="checkbox" name="sg"><input type="checkbox" name="sh"><input type="checkbox" name="si"></td>
+                    <tr>
+                        <td><input type="text" name="lang2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="lang3"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="lang4"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="lang5"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="lang6"></td>
                     </tr>
                 </table>
             </div>
-            <div id="deeds-minipage" class="minipage minipage-small">
+            <!-- <div class="minipage minipage-large">
+                <div class="text-center item-header" style="padding-top: 5px;">Abilities</div>
+                <table id="abilities" class="list-table wide-input" >
+                    <tr>
+                        <td><input type="text" name="inv1"></td>
+                        <td><input type="text" name="inv2"></td>
+                        <td><input type="text" name="inv2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="inv3"></td>
+                        <td><input type="text" name="inv4"></td>
+                        <td><input type="text" name="inv2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="inv5"></td>
+                        <td><input type="text" name="inv6"></td>
+                        <td><input type="text" name="inv2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="inv7"></td>
+                        <td><input type="text" name="inv8"></td>
+                        <td><input type="text" name="inv2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="inv9"></td>
+                        <td><input type="text" name="inv10"></td>
+                        <td><input type="text" name="inv2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="inv11"></td>
+                        <td><input type="text" name="inv12"></td>
+                        <td><input type="text" name="inv2"></td>
+                    </tr>
+                </table>
+            </div> -->
+            <div id="deeds-minipage" class="minipage minipage-small" style="margin-right: 0px;">
                 <div id="deeds" class="text-center item-header" style="padding-top: 5px;">Deeds</div>
-                <table id="deeds-table" class="list-table">
+                <table id="deeds-table" class="list-table wide-input">
                     <tr>
                         <td><input type="text" name="deed1"></td>
                     </tr>
@@ -342,28 +401,9 @@
                 </table>
             </div>
             <span style="width: 100%; display: inline-block;"></span>
-        </div>
-
-        <div style="clear: both;"></div>
-
-        <div class="center">
 
         </div>
-
-        <div style="width: 30%;">
-            <span style="width: 100%;">Notes to Self</span>
-            <textarea disabled style="resize: none; height: 15em; width: 50em;">
-armor?
-    Works as DT modifier, but could be fun with more active role
-guard break?
-    On filled wound bar?
-Weaknesses as titles?
-    Using weakness on roll gives advantage later?
-Scars as titles?
-    Also make some example scars
-Speed
-            </textarea>
-        </div>
+        
     </section>
     <script>
         localStorage = window['localStorage']
@@ -393,6 +433,55 @@ Speed
                 document.getElementsByName(key).value = val
             }
         }
+    </script>
+    <script>
+        const centerX = 100, centerY = 100;
+        const outerRadius = 90, innerRadius = 70;
+        const segments = 12;
+        const gapAngle = 2; // Angle for the gap between segments
+        const firstAngle = -75; // Modify this to change where the first part is drawn
+        const smallRadius = 50;
+
+        function polarToCartesian(r, angleDeg) {
+        const rad = (Math.PI / 180) * angleDeg;
+        return {
+            x: centerX + r * Math.cos(rad),
+            y: centerY + r * Math.sin(rad)
+        };
+        }
+
+        function arcPath(startAngle, endAngle, rOuter, rInner) {
+        const startOuter = polarToCartesian(rOuter, startAngle);
+        const endOuter = polarToCartesian(rOuter, endAngle);
+        const startInner = polarToCartesian(rInner, endAngle);
+        const endInner = polarToCartesian(rInner, startAngle);
+
+        return `
+            M ${startOuter.x},${startOuter.y}
+            A ${rOuter},${rOuter} 0 0 1 ${endOuter.x},${endOuter.y}
+            L ${startInner.x},${startInner.y}
+            A ${rInner},${rInner} 0 0 0 ${endInner.x},${endInner.y}
+            Z
+        `;
+        }
+
+        let paths = `<circle cx="${centerX}" cy="${centerY}" r="${smallRadius}" stroke="#000" stroke-width="1" fill="white" />\n`;;
+        for (let i = 0; i < segments; i++) {
+        const baseAngle = firstAngle + i * (360 / segments);
+        const startAngle = baseAngle - (15 - gapAngle / 2);
+        const endAngle = baseAngle + (15 - gapAngle / 2);
+        paths += `<path class="ring-part" name="strain${i+1}" d="${arcPath(startAngle, endAngle, outerRadius, innerRadius)}" />\n`;
+        }
+
+
+        document.querySelector('svg').innerHTML = paths;
+    </script>
+    <script>
+    document.querySelectorAll('.ring-part').forEach(part => {
+        part.addEventListener('click', () => {
+        part.classList.toggle('active');
+        });
+    });
     </script>
 </body>
 </html>
