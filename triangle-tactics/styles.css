@@ -15,9 +15,14 @@
   margin-right: auto;
 }
 
+.item-header {
+  padding-top: 5px;
+}
+
 body {
   font-family: Dungeon, Gabriola, Papyrus, Arial, sans-serif;
   font-size: medium;
+  color: #282828;
   line-height: 1.1;
   margin: 0.5cm;
 }
@@ -39,49 +44,8 @@ input {
   border-radius: 0.5rem;
   margin-inline: 1px;
 }
-.triangles {
-  padding-left: 12px;
-}
-.triangles input[type="checkbox"] {
-  appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-  margin: 0px 5px;
-  width: 12px; 
-  height: 12px;
-  border: 2px solid #000000; 
-  left: 50%;
-  top: 50%;
-  border-right: none; 
-  border-bottom: none; 
-}
-.triangles-up input[type="checkbox"] {
-  transform: translate(-50%, 40%) rotate(45deg);
-}
-.triangles-down input[type="checkbox"] {
-  transform: translate(-50%, -10%) rotate(-135deg);
-}
-.triangles input[type="checkbox"]:before  {
-  appearance: none;
-  -webkit-appearance: none;
-  position: absolute;
-  content: "";
-  border-top: 2px solid #000000;
-  border-bottom: 10px solid #eeeeee;
-  width: calc(1.41 * (12px));
-  transform: rotate(-45deg);
-  left: -0.3px;
-  top: 2.3px;
-}
-.triangles input[type="checkbox"]:nth-last-child(-n+3) {
-  border: 2px solid gray; 
-}
-.triangles input[type="checkbox"]:nth-last-child(-n+3):before {
-  border-top: 2px solid gray; 
-  border-bottom: 10px solid #eeeeee;
-}
 input[type="checkbox"]:checked {
-  background-color: black;
+  background-color: #282828;
 }
 textarea {
   font-family: Dungeon, Gabriola, Papyrus, Arial, sans-serif;
@@ -111,6 +75,9 @@ table {
   width: 20%;
 }
 .minipage-smaller {
+  width: 16%;
+}
+.minipage-smallest {
   width: 10%;
 }
 .minipage-medium {
@@ -174,40 +141,13 @@ table {
 }
 
 
-#beyond-container {
+#beyond-container,
+#guard-container {
   font-family: Arial, sans-serif;
 }
-#beyond-container * {
+#beyond-container *,
+#guard-container * {
   font-family: Gabriola, Dungeon, Papyrus, Arial, sans-serif;
-}
-
-#damage {
-  /* border: 1px solid #000000;
-  border-left: 0;
-  border-top: 0; */
-  padding-bottom: 5px;
-  margin-bottom: 5px;
-}
-
-#damage tr td {
-  /* border: 1px solid #000000; */
-  /* border-block: 0; */
-  padding: 5px 0 0 0;
-  margin: 5px 0 0 0;
-  /* text-align: left; */
-}
-
-#damage input[type="text"] {
-  width: 90%;
-}
-#damage input[type="checkbox"]:nth-last-child(-n+3):not(:checked) {
-  border-color: red;
-}
-#damage input[type="checkbox"]:nth-child(-n+6):not(:nth-last-child(-n+1)):not(:checked) {
-  border-color: #FF5555;
-}
-#damage input[type="checkbox"]:nth-child(-n+3):not(:nth-last-child(-n+2)):not(:checked) {
-  border-color: gray;
 }
 
 #weapons {
@@ -228,10 +168,6 @@ table {
   width: 100%;
 }
 
-/* #titles-minipage {
-  border-inline: 1px solid #000000;;
-} */
-
 .list-table tr,
 .list-table td {
   border: 0;
@@ -247,13 +183,30 @@ table {
   width: 100%;
 }
 
+#scars-table tr td:nth-child(1),
 #title-table tr td:nth-child(1) {
   padding-inline: 5px;
 }
 
+#scars-table tr td:nth-child(2),
 #title-table tr td:nth-child(2) {
   padding-right: 5px;
   width: 20px;
+}
+#hit-mods tr td:nth-child(1) {
+  padding-right: 5px;
+}
+#hit-mods tr:nth-child(1) td:nth-child(2),
+#hit-mods tr:nth-child(2) td:nth-child(2) {
+  padding-inline: 5px;
+  width: 20px;
+}
+#hit-mods tr:nth-child(1),
+#hit-mods tr:nth-child(2) {
+  border-inline: 1px solid gray;
+}
+.input-offset input {
+  margin-left: -1px;
 }
 #inventory tr td:nth-child(2) {
   padding-left: 2.5px;
@@ -263,6 +216,24 @@ table {
 }
 #abilities tr td {
   padding-inline: 2.5px;
+  text-align: center;
+}
+
+#abilities tr:nth-last-child(3) td {
+  padding-top: 5px;
+  border-inline: 1px solid #555555;
+  font-weight: bolder;
+}
+#abilities tr:nth-last-child(2) td {
+  padding-top: 5px;
+  border-inline: 1px solid #232323;
+  /* border-bottom: 1px solid gray; */
+  font-weight: bolder;
+}
+
+  
+#abilities input[type="text"] {
+  width: 90%;
 }
 
 #stance-table {
@@ -276,31 +247,26 @@ table {
   font-weight: bolder;
 }
 
-/* .currency,  */
 .stances {
-  border: 1px solid #000000;
+  border: 1px solid #232323;
   border-right: 0;
   padding-block: 10px;
 }
 
-#coin-pouch {
-  padding-right: 10px;
-  /* border-right: 1px solid black; */
+#currency-table td 
+{
+  border: 0;
+  padding: 2px 0 0 0;
+  margin: 0 0 0 0;
+  padding-inline: 0px;
 }
 
 #currency-table tr td:nth-child(1) input {
   width: 45px;
-  border-bottom: 1px solid gray;
-  /* border-top: 1px solid gray; */
-  /* border-inline: 1px solid gray; */
 }
 #currency-table tr td:nth-child(2) input {
   width: 30px;
-  /* border-bottom: 0; */
-  /* border-right: 1px solid gray; */
-  /* border-top: 1px solid gray; */
   text-align: right;
-  /* border-inline: 1px solid gray; */
 }
 
 #currency-table tr td:nth-child(2) {
@@ -319,7 +285,7 @@ table {
 .ring-part {
   cursor: pointer;
   fill: #eeeeee; /* Default color */
-  stroke: #000;
+  stroke: #282828;
   stroke-width: 1px;
 }
 /* svg .ring-part:nth-last-child(-n+6) {
@@ -329,5 +295,57 @@ svg .ring-part:nth-last-child(-n+3) {
   stroke: grey;
 }
 .ring-part.active {
-  fill: #000; /* Toggled color */
+  fill: #282828; /* Toggled color */
+}
+.triangle-checkbox {
+  display: inline-block;
+  width: fit-content;
+  height: 16px;
+  cursor: pointer;
+  position: relative;
+  padding-inline: 1px;
+  margin-bottom: -10px;
+}
+.triangles,
+.triangles * {
+  max-height: 16px !important;
+}
+.triangle-checkbox polygon {
+  fill: #eee;
+  stroke: #232323;
+  stroke-width: 1.2px;
+}
+.triangle-checkbox:nth-last-child(-n+3) polygon {
+  stroke: grey;
+}
+.triangle-checkbox input[type="checkbox"] {
+  display: none;
+}
+.triangle-checkbox input[type="checkbox"]:checked + svg polygon {
+  fill: #232323;
+}
+.star-checkboxes label:nth-child(2n+1) {
+  margin-right: 30px;
+}
+.star-checkboxes polygon {
+  fill: #eee;
+  stroke: #232323;
+  stroke-width: 1.2px;
+}
+.star-checkboxes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.star-checkboxes {
+  margin: 5px 0;
+}
+.star-checkboxes input[type="checkbox"] {
+  display: none;
+}
+.star-checkboxes input[type="checkbox"] svg polygon {
+  fill: #232323;
+}
+.star-checkboxes input[type="checkbox"]:checked svg polygon {
+  fill: #232323;
 }

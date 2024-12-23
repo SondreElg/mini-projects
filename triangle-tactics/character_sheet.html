@@ -19,7 +19,7 @@
     <style>@page { size: A4 }</style>
 </head>
 <body class="A4">
-    <section class="sheet padding-10mm">
+    <section class="sheet padding-10mm" style="padding: 5mm;">
         <div class="text-center" style="margin-bottom: 10px;">
             <table class="center" style="width: 80%;">
                 <tbody >
@@ -62,30 +62,25 @@
                 <table id="damage-thresholds">
                     <tr class="centered-input">
                         <td style="width: 3.6em;">
-                            <div display="flex">
-                                <div id="beyond-container" style="position: relative; z-index: 1; font-size: xx-large; margin: 0; padding: 0; padding-top: 8px; margin-top: -5px;">&#9929;
-                                    <div style="position: absolute; top: 0; width: 100%; border: 1px;">
-                                        <input type="text" style="font-size: medium; z-index: 3; width: 1em; background-color: transparent; border: 0; margin-top: 13px" name="guard">
-                                        <!-- <p style=" margin-left: -0.3em; font-size: small;">+5</p> -->
-                                    </div>
-                                </div>
+                            <div class="text-center">
+                                <input type="text" style="width: 2em;" name="speed"/>
                             </div>
                         </td>
                         <td style="width: 2em;"><input type="text" name="hit" style="width: 2em;"></td>
                         <td style="width: 2em;"><input type="text" name="heavy" style="width: 2em;"></td>
                         <td style="width: 2em;"><input type="text" name="brutal" style="width: 2em;"></td>
                         <td style="width: 3.6em;">
-                            <div>
-                                <div id="beyond-container" style="position: relative; font-size: xx-large; margin: 0; padding: 0; padding-top: 2px; margin-bottom: -2px;">⟳
+                            <div style="display: flex; align-items: center;">
+                                <div id="beyond-container" style="position: relative; width: 100%; z-index: 1; font-size: xx-large; margin: 0; padding: 0; padding-top: 8px; margin-top: -5px;">⟳
                                     <div style="position: absolute; top: 0; width: 100%;">
-                                        <p style=" margin-left: -0.3em; font-size: small;">+5</p>
+                                        <p style="font-size: small; z-index: 1; width: 100%; background-color: transparent; border: 0; margin-top: 1.4em; margin-left: -0.2em;">+5</p>
                                     </div>
                                 </div>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td style="border-left: 0;">Guard</td>
+                        <td style="border-left: 0;">Speed</td>
                         <td>Hit</td>
                         <td>Heavy</td>
                         <td>Brutal</td>
@@ -97,13 +92,27 @@
             <div class="text-center item-header center" style="padding-block: 15px;">
                 <table id="damage-table" class="center" style="width: fit-content">
                     <tr id="adrenaline-row" class="centered-input">
-                        <td style="width: 60px">Focus</td>
-                        <td class="triangles triangles-up"><input type="checkbox" name="sa"><input type="checkbox" name="sb"><input type="checkbox" name="sc"><input type="checkbox" name="sd"><input type="checkbox" name="se"><input type="checkbox" name="sf"><input type="checkbox" name="sg"><input type="checkbox" name="sh"><input type="checkbox" name="si"></td>
-                        <td rowspan="2" style="width: 60px"><input type="text" name="bonus" style="width: 35px;"></td>
+                        <td rowspan="3" style="width: 45px">
+                            <div id="guard-container" style="position: relative; width: 100%; z-index: 1; font-size: xx-large; margin: 0; padding: 0; padding-top: 5px; margin-top: -5px;">&#9929;
+                                <div style="position: absolute; top: 0; width: 100%; border: 1px;">
+                                    <input type="text" style="font-size: medium; z-index: 1; width: 1em; background-color: transparent; border: 0;" name="guard">
+                                    <!-- <p style=" margin-left: -0.3em; font-size: small;">+5</p> -->
+                                </div>
+                            </div>
+                        </td>
+                        <td class="triangles triangles-up">
+
+                        </td>
+                        <td rowspan="3" style="width: 45px"><input type="text" name="bonus" style="width: 25px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0; line-height: 0.8;">
+                            <span style="position: relative; top: -3px; font-size: smaller;">Focus / Fatigue</span>
+                        </td>
                     </tr>
                     <tr id="exhaustion-row">
-                        <td style="width: 60px">Fatigue</td>
-                        <td class="triangles triangles-down"><input type="checkbox" name="sa"><input type="checkbox" name="sb"><input type="checkbox" name="sc"><input type="checkbox" name="sd"><input type="checkbox" name="se"><input type="checkbox" name="sf"><input type="checkbox" name="sg"><input type="checkbox" name="sh"><input type="checkbox" name="si"></td>
+                        <!-- <td style="width: 60px">Fatigue</td> -->
+                        <td class="triangles triangles-down"></td>
                         <!-- <td style="width: 60px">Bonus</td> -->
                     </tr>
                 </table>
@@ -114,42 +123,116 @@
 
         <div class="distributer">
             <div class="minipage-smaller">
-                <div class="text-center" style="display: flex; align-items: center; margin-top: -20px; height: 90px; width: 90px; background-color: white;">
-                    <div class="text-center item-header" style="margin: auto;">Armor & <br> Resistances</div>
-                </div>
+                <div class="text-center item-header" style="margin-top: -82px;">Armor</div>
+                <table id="hit-mods" class="list-table wide-input input-offset">
+                    <tr>
+                        <td style="width: 45px;" class="text-center centered-input"><input type="text" name="hit_mod""></td>
+                        <td style="width: 45px;" class="text-center centered-input"><input type="text" name="heavy_mod"></td>
+                        <td style="width: 45px;" class="text-center centered-input"><input type="text" name="brutal_mod"></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 45px;" class="text-center centered-input"><input disabled value="Hit" type="text"></td>
+                        <td style="width: 45px;" class="text-center centered-input"><input disabled value="Heavy" type="text"></td>
+                        <td style="width: 45px;" class="text-center centered-input"><input disabled value="Brutal" type="text"></td>
+                    </tr>
+                <!-- </table>
+                <table id="resistances" class="list-table wide-input"> -->
+                    <tr>
+                        <td colspan="2"><input disabled value="Armor Bulk" type="text" name="res3"></td>
+                        <td><input type="text" name="res3_mod"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input value="Resistances?" type="text" name="res4"></td>
+                        <td><input type="text" name="res4_mod"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="text" name="res5"></td>
+                        <td><input type="text" name="res5_mod"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="text" name="res6"></td>
+                        <td><input type="text" name="res6_mod"></td>
+                    </tr>
+                </table>
             </div>
             <div class="minipage minipage-large">
                 
                 <table id="weapons">
                     <tr>
-                        <td style="width: 8em;">Weapon</td>
-                        <td style="width: 5em;">Damage</td>
-                        <td style="width: 5em;">Reach</td>
+                        <td style="width: 8.5em;">Weapon</td>
+                        <td style="width: 4em;">Damage</td>
+                        <!-- <td style="width: 3em;">Reach</td> -->
                         <td style="width: auto;">Tags</td>
                     </tr>
                     <tr>
                         <td><div><input type="text" name="wep1"></div></td>
                         <td><div><input type="text" name="wep1_dmg"></div></td>
-                        <td><div><input type="text" name="wep1_reach"></div></td>
+                        <!-- <td><div><input type="text" name="wep1_reach"></div></td> -->
                         <td><div><input type="text" name="wep1_tags"></div></td>
                     </tr>
                     <tr>
                         <td><div><input type="text" name="wep2"></div></td>
                         <td><div><input type="text" name="wep2_dmg"></div></td>
-                        <td><div><input type="text" name="wep2_reach"></div></td>
+                        <!-- <td><div><input type="text" name="wep2_reach"></div></td> -->
                         <td><div><input type="text" name="wep2_tags"></div></td>
                     </tr>
                     <tr>
                         <td><div><input type="text" name="wep3"></div></td>
                         <td><div><input type="text" name="wep3_dmg"></div></td>
-                        <td><div><input type="text" name="wep3_reach"></div></td>
+                        <!-- <td><div><input type="text" name="wep3_reach"></div></td> -->
                         <td><div><input type="text" name="wep3_tags"></div></td>
                     </tr>
                 </table>
             </div>
 
-            <div class="minipage minipage-smaller" style="margin-top: -60px;">
-                <div class="stances" style="width: fit-content;">
+            <div class="minipage minipage-smaller" style="margin-top: -80px;">
+                <div class="star-checkboxes center text-center" style="width: 100px;">
+                    Hope here?
+                    <label class="star-checkbox">
+                        <input type="checkbox" name="star1">
+                        <svg width="20" height="20" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,10 13,13 10,19 7,13 1,10 7,7"></polygon>
+                        </svg>
+                    </label>
+                    <!-- <label class="star-checkbox">
+                        <input type="checkbox" name="star2">
+                        <svg width="20" height="20" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,10 13,13 10,19 7,13 1,10 7,7"></polygon>
+                        </svg>
+                    </label>
+                    <label class="star-checkbox">
+                        <input type="checkbox" name="star3">
+                        <svg width="20" height="20" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,10 13,13 10,19 7,13 1,10 7,7"></polygon>
+                        </svg>
+                    </label>
+                    <label class="star-checkbox">
+                        <input type="checkbox" name="star4">
+                        <svg width="20" height="20" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,10 13,13 10,19 7,13 1,10 7,7"></polygon>
+                        </svg>
+                    </label>
+                    <label class="star-checkbox">
+                        <input type="checkbox" name="star5">
+                        <svg width="20" height="20" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,10 13,13 10,19 7,13 1,10 7,7"></polygon>
+                        </svg>
+                    </label>
+                    <label class="star-checkbox">
+                        <input type="checkbox" name="star5">
+                        <svg width="20" height="20" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,10 13,13 10,19 7,13 1,10 7,7"></polygon>
+                        </svg>
+                    </label>
+                    <label class="star-checkbox">
+                        <input type="checkbox" name="star5">
+                        <svg width="20" height="20" viewBox="0 0 20 20">
+                            <polygon points="10,1 13,7 19,10 13,13 10,19 7,13 1,10 7,7"></polygon>
+                        </svg>
+                    </label>
+                    <span class="text-center center" style="margin-inline: auto; padding-right: 20px;">Hope</span> -->
+                </div>
+                <!-- <div class="stances" style="width: fit-content;">
                     <table id="stance-table">
                         <tr>
                             <td>Attacking</td>
@@ -160,7 +243,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Defending</td>
+                            <td>Controlling</td>
                         </tr>
                         <tr>
                             <td>
@@ -168,10 +251,10 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Controlling</td>
+                            <td>Defending</td>
                         </tr>
                     </table>
-                </div>
+                </div> -->
             </div>
             
             <span style="width: 100%; display: inline-block;"></span>
@@ -181,25 +264,31 @@
 
         <div class="distributer">
             <div id="scars-minipage" class="minipage minipage-small">
-                <div id="scars" class="text-center item-header" style="padding-top: 5px;">Scars</div>
+                <div id="scars" class="text-center item-header" >Scars</div>
                 <table id="scars-table" class="list-table wide-input">
                     <tr>
                         <td><input type="text" name="scar1"></td>
+                        <td><input type="text" name="exp_mod1"></td>
                     </tr>
                     <tr>
                         <td><input type="text" name="scar2"></td>
+                        <td><input type="text" name="exp_mod2"></td>
                     </tr>
                     <tr>
                         <td><input type="text" name="scar3"></td>
+                        <td><input type="text" name="exp_mod3"></td>
                     </tr>
                     <tr>
                         <td><input type="text" name="scar4"></td>
+                        <td><input type="text" name="exp_mod4"></td>
                     </tr>
                     <tr>
                         <td><input type="text" name="scar5"></td>
+                        <td><input type="text" name="exp_mod5"></td>
                     </tr>
                     <tr>
                         <td><input type="text" name="scar6"></td>
+                        <td><input type="text" name="exp_mod6"></td>
                     </tr>
                 </table>
             </div>
@@ -208,15 +297,14 @@
                     <span style="margin-inline: auto;">Strain</span>
                 </div>
                 <div style="display: flex; align-items: center;">
-                    <svg width="200" height="200" viewBox="0 0 200 200">
-            </svg>
+                    <svg id="strain-svg" width="200" height="200" viewBox="0 0 200 200"></svg>
                     <div class="text-center center" style="position: relative; top: -50%; left: -50%; width: 0; display: flex; justify-content: center; align-items: center;">
                         <span class="text-center"">Pressure<br>Die</span>
                     </div>
                 </div>
             </div>
             <div id="titles-minipage" class="minipage minipage-small">
-                <div id="titles" class="text-center item-header" style="padding-top: 5px;">Titles</div>
+                <div id="titles" class="text-center item-header" >Titles</div>
                 <table id="title-table" class="list-table wide-input">
                     <tr>
                         <td><input type="text" name="exp1"></td>
@@ -248,37 +336,37 @@
         </div>
 
         <div class="distributer">
-            <div class="minipage minipage-small">
-                <div id="coin-pouch">
-                    <div class="text-center item-header" style="padding-top: 5px;">Coin Pouch</div>
-                    <div class="currency" style="width: fit-content;">
-                        <table id="currency-table" class="list-table">
-                            <tr>
-                                <td><input disabled value="Copper"></input></td>
-                                <td><input type="text" name="cc"></td>
-                            </tr>
-                            <tr>
-                                <td><input disabled value="Bronze"></input></td>
-                                <td><input type="text" name="bc"></td>
-                            </tr>
-                            <tr>
-                                <td><input disabled value="Silver"></input></td>
-                                <td><input type="text" name="sc"></td>
-                            </tr>
-                            <tr>
-                                <td><input disabled value="Gold"></input></td>
-                                <td><input type="text" name="gc"></td>
-                            </tr>
-                            <tr>
-                                <td><input disabled value="Platinum"></input></td>
-                                <td><input type="text" name="pc" style="border-bottom: 1px solid gray;"></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
+            <div class="minipage minipage-small currency center">
+                <div id="coin-pouch" class="currency text-center item-header">Coin Pouch</div>
+                    <table id="currency-table" class="list-table center" style="width: fit-content;">
+                        <tr>
+                            <td><input disabled value="Copper"></input></td>
+                            <td><input type="text" name="cc"></td>
+                        </tr>
+                        <tr>
+                            <td><input disabled value="Bronze"></input></td>
+                            <td><input type="text" name="bc"></td>
+                        </tr>
+                        <tr>
+                            <td><input disabled value="Silver"></input></td>
+                            <td><input type="text" name="sc"></td>
+                        </tr>
+                        <tr>
+                            <td><input disabled value="Gold"></input></td>
+                            <td><input type="text" name="gc"></td>
+                        </tr>
+                        <tr>
+                            <td><input disabled value="Platinum"></input></td>
+                            <td><input type="text" name="pc"></td>
+                        </tr>
+                        <tr>
+                            <td><input name="free_currency"></input></td>
+                            <td><input type="text" name="fc"></td>
+                        </tr>
+                    </table>
             </div>
             <div class="minipage minipage-medium">
-                <div class="text-center item-header" style="padding-top: 5px;">Inventory<span style="font-size: 0.8em;" class="gray"> (5+Might)</span></div>
+                <div class="text-center item-header" >Inventory<span style="font-size: 0.8em;" class="gray"> (5+Might)</span></div>
                 <table id="inventory" class="wide-input">
                     <tr>
                         <td><input type="text" name="inv1"></td>
@@ -307,7 +395,7 @@
                 </table>
             </div>
             <div class="minipage minipage-small">
-                <div class="text-center item-header" style="padding-bottom: 25px; padding-top: 5px;">Pocket</div>
+                <div class="text-center item-header" style="padding-bottom: 25px; ">Pocket</div>
                 <!-- <hr style="width: 8em;"> -->
                 <div class="center" style="width: fit-content;">
                     <textarea id="limitedTextarea" rows="5" cols="18" oninput="enforceMaxLines(this)"></textarea>
@@ -317,10 +405,10 @@
         </div>
 
         <div style="clear: both;"></div>
-
         <div class="distributer">
             <div id="languages-minipage" class="minipage minipage-small" style="margin-left: 0px">
-                <div id="languages" class="text-center item-header" style="padding-top: 5px;">Languages</div>
+                <div id="languages" class="text-center item-header" >Languages</div>
+
                 <table id="languages-table" class="list-table wide-input">
                     <tr>
                         <td><input type="text" name="lang1"></td>
@@ -341,9 +429,10 @@
                         <td><input type="text" name="lang6"></td>
                     </tr>
                 </table>
+
             </div>
-            <!-- <div class="minipage minipage-large">
-                <div class="text-center item-header" style="padding-top: 5px;">Abilities</div>
+            <div class="minipage minipage-large">
+                <div class="text-center item-header" >Abilities</div>
                 <table id="abilities" class="list-table wide-input" >
                     <tr>
                         <td><input type="text" name="inv1"></td>
@@ -375,10 +464,28 @@
                         <td><input type="text" name="inv12"></td>
                         <td><input type="text" name="inv2"></td>
                     </tr>
+                    <tr>
+                        <td><input type="text" name="inv11"></td>
+                        <td><input type="text" name="inv12"></td>
+                        <td><input type="text" name="inv2"></td>
+                    </tr>
+                    <tr>
+                        <td>Attacking</td>
+                        <td>Controlling</td>
+                        <td>Defending</td>
+                    </tr>
+                    <tr style="height: 10px;">
+                        <td></td>
+                        <td style=" border-inline: 1px solid #232323;"></td>
+                        <td></td>
+                    </tr>
                 </table>
-            </div> -->
+
+
+            </div>
             <div id="deeds-minipage" class="minipage minipage-small" style="margin-right: 0px;">
-                <div id="deeds" class="text-center item-header" style="padding-top: 5px;">Deeds</div>
+                
+                <div id="deeds" class="text-center item-header" >Deeds</div>
                 <table id="deeds-table" class="list-table wide-input">
                     <tr>
                         <td><input type="text" name="deed1"></td>
@@ -401,9 +508,7 @@
                 </table>
             </div>
             <span style="width: 100%; display: inline-block;"></span>
-
         </div>
-        
     </section>
     <script>
         localStorage = window['localStorage']
@@ -465,7 +570,7 @@
         `;
         }
 
-        let paths = `<circle cx="${centerX}" cy="${centerY}" r="${smallRadius}" stroke="#000" stroke-width="1" fill="white" />\n`;;
+        let paths = `<circle cx="${centerX}" cy="${centerY}" r="${smallRadius}" stroke="#282828" stroke-width="1" fill="white" />\n`;;
         for (let i = 0; i < segments; i++) {
         const baseAngle = firstAngle + i * (360 / segments);
         const startAngle = baseAngle - (15 - gapAngle / 2);
@@ -474,7 +579,7 @@
         }
 
 
-        document.querySelector('svg').innerHTML = paths;
+        document.querySelector('#strain-svg').innerHTML = paths;
     </script>
     <script>
     document.querySelectorAll('.ring-part').forEach(part => {
@@ -482,6 +587,45 @@
         part.classList.toggle('active');
         });
     });
+    </script>
+      <script>
+        document.querySelectorAll('.triangle-checkbox').forEach(checkbox => {
+          checkbox.addEventListener('click', function() {
+            const input = this.querySelector('input[type="checkbox"]');
+            input.checked = !input.checked;
+          });
+        });
+      </script>
+    <script>
+        document.querySelectorAll('#adrenaline-row .triangles-up').forEach(row => {
+            for (let i = 0; i < 9; i++) {
+                row.innerHTML += `<label class="triangle-checkbox">
+                                <input type="checkbox" name="foc${i+1}">
+                                <svg style="width: 14px; height: fit-content" viewBox="0 0 10 10">
+                                <polygon points="5,3 9,9 1,9"></polygon>
+                                </svg>
+                            </label>`;
+            }
+        });
+
+        document.querySelectorAll('#exhaustion-row .triangles-down').forEach(row => {
+            for (let i = 0; i < 9; i++) {
+                row.innerHTML += `<label class="triangle-checkbox">
+                                <input type="checkbox" name="fat${i+1}">
+                                <svg style="width: 14px; height: 14px" viewBox="0 0 10 10">
+                                <polygon points="5,7 9,1 1,1"></polygon>
+                                </svg>
+                            </label>`;
+            }
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.star-checkbox').forEach(star => {
+            star.addEventListener('click', function() {
+                const input = this.querySelector('input[type="checkbox"]');
+                input.checked = !input.checked;
+            });
+        });
     </script>
 </body>
 </html>
