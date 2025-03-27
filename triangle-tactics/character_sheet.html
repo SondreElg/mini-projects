@@ -299,7 +299,7 @@
                 <div style="display: flex; align-items: center;">
                     <svg id="strain-svg" width="200" height="200" viewBox="0 0 200 200"></svg>
                     <div class="text-center center" style="position: relative; top: -50%; left: -50%; width: 0; display: flex; justify-content: center; align-items: center;">
-                        <span class="text-center"">Pressure<br>Die</span>
+                        <!-- <span class="text-center"">Pressure<br>Die</span> -->
                     </div>
                 </div>
             </div>
@@ -541,45 +541,143 @@
     </script>
     <script>
         const centerX = 100, centerY = 100;
-        const outerRadius = 90, innerRadius = 70;
-        const segments = 12;
-        const gapAngle = 2; // Angle for the gap between segments
-        const firstAngle = -75; // Modify this to change where the first part is drawn
-        const smallRadius = 50;
+        const arms = 12;
+        const startRadius = 10, endRadius = 80; // Adjusted start radius to be smaller
+        const rotationDegrees = 126; // 35% of a circle (360 * 0.35)
+        const steps = 100; // number of segments per arm
+        const nodeRadius = 6; // radius of node at end of each arm (8 gives smooth arms)
+        const armWidth = 8; // width of the arms
+        const nodeWrapPercent = 0.7; // 70% wrap around nodes
 
-        function polarToCartesian(r, angleDeg) {
-        const rad = (Math.PI / 180) * angleDeg;
-        return {
-            x: centerX + r * Math.cos(rad),
-            y: centerY + r * Math.sin(rad)
-        };
+        function polarPoint(r, angleDeg) {
+            const rad = (Math.PI / 180) * angleDeg;
+            return {
+                x: centerX + r * Math.cos(rad),
+                y: centerY + r * Math.sin(rad)
+            };
         }
 
-        function arcPath(startAngle, endAngle, rOuter, rInner) {
-        const startOuter = polarToCartesian(rOuter, startAngle);
-        const endOuter = polarToCartesian(rOuter, endAngle);
-        const startInner = polarToCartesian(rInner, endAngle);
-        const endInner = polarToCartesian(rInner, startAngle);
-
-        return `
-            M ${startOuter.x},${startOuter.y}
-            A ${rOuter},${rOuter} 0 0 1 ${endOuter.x},${endOuter.y}
-            L ${startInner.x},${startInner.y}
-            A ${rInner},${rInner} 0 0 0 ${endInner.x},${endInner.y}
-            Z
-        `;
+        function getPointAlongArc(centerX, centerY, radius, angleStart, angleEnd, percent) {
+            const angle = angleStart + (angleEnd - angleStart) * percent;
+            const rad = (Math.PI / 180) * angle;
+            return {
+                x: centerX + radius * Math.cos(rad),
+                y: centerY + radius * Math.sin(rad)
+            };
         }
 
-        let paths = `<circle cx="${centerX}" cy="${centerY}" r="${smallRadius}" stroke="#282828" stroke-width="1" fill="white" />\n`;;
-        for (let i = 0; i < segments; i++) {
-        const baseAngle = firstAngle + i * (360 / segments);
-        const startAngle = baseAngle - (15 - gapAngle / 2);
-        const endAngle = baseAngle + (15 - gapAngle / 2);
-        paths += `<path class="ring-part" name="strain${i+1}" d="${arcPath(startAngle, endAngle, outerRadius, innerRadius)}" />\n`;
+        let svgContent = "";
+
+        // Generate arms
+        for (let i = 0; i < arms; i++) {
+            const baseAngle = (360 / arms) * i;
+            let pathPoints = [];
+            let innerPathPoints = [];
+            
+            // Calculate node position at 80% of arm length
+            const nodePosition = 0.8;
+            const nodeR = startRadius + (endRadius - startRadius) * nodePosition;
+            const nodeAngle = baseAngle + rotationDegrees * nodePosition;
+            const nodeCenter = polarPoint(nodeR + nodeRadius, nodeAngle);
+            
+            // Build the outer curve of the arm
+            for (let j = 0; j <= steps; j++) {
+                const t = j / steps;
+                
+                if (t <= 0.8) {
+                    // Regular spiral segment before the node
+                    const r = startRadius + (endRadius - startRadius) * t;
+                    const angle = baseAngle + rotationDegrees * t;
+                    pathPoints.push(polarPoint(r, angle));
+                } 
+                // else {
+                //     // Wrap around the node with a smooth continuation from the spiral
+                //     const previousPoint = pathPoints[pathPoints.length - 1]; // Get last point of spiral
+                //     const normalizedPercent = (t - nodePosition) / (1 - nodePosition);
+                    
+                //     // Calculate the angle to ensure smooth continuation
+                //     const tangentAngle = baseAngle + rotationDegrees;
+                //     const wrapAngle = nodeAngle + normalizedPercent * 360 * nodeWrapPercent;
+                    
+                //     // Use a blend between tangent direction and circular path for smooth transition
+                //     const blendFactor = Math.min(1, normalizedPercent * 3); // Faster blend for smoother transition
+                    
+                //     // Calculate the radius with a smooth transition
+                //     const distanceToNode = Math.sqrt(
+                //         Math.pow(nodeCenter.x - previousPoint.x, 2) + 
+                //         Math.pow(nodeCenter.y - previousPoint.y, 2)
+                //     );
+                    
+                //     // Blend the radius from the spiral end to the node circle
+                //     const curveRadius = nodeRadius + armWidth/2 - (armWidth/2) * blendFactor;
+                    
+                //     pathPoints.push({
+                //         x: nodeCenter.x + curveRadius * Math.cos((Math.PI / 180) * wrapAngle),
+                //         y: nodeCenter.y + curveRadius * Math.sin((Math.PI / 180) * wrapAngle)
+                //     });
+                // }
+            }
+            
+            // Build the inner curve to create the lens shape
+            for (let j = steps; j >= 0; j--) {
+                const t = j / steps;
+                
+                if (t <= 0.84) {
+                    // Regular spiral segment inner curve
+                    const r = Math.max(1, startRadius + (endRadius - startRadius) * t - armWidth);
+                    const angle = baseAngle + rotationDegrees * t;
+                    innerPathPoints.push(polarPoint(r, angle));
+                } else {
+                    // Inner curve wrapping around the node
+                    const wrapStart = nodeAngle + 320 * nodeWrapPercent;;
+                    const wrapEnd = nodeAngle 
+                    const wrapPercent = (t - nodePosition) / (1 - nodePosition);
+                    const wrapAngle = wrapStart + wrapPercent * (wrapEnd - wrapStart);
+                    innerPathPoints.push({
+                        x: nodeCenter.x + (nodeRadius * (2 - (t - 0.828) / 0.15)) * Math.cos((Math.PI / 180) * wrapAngle),
+                        y: nodeCenter.y + (nodeRadius * (2 - (t - 0.828) / 0.15)) * Math.sin((Math.PI / 180) * wrapAngle)
+                    });
+                }
+            }
+            
+            // Combine outer and inner paths to create a closed shape
+            let pathD = `M ${pathPoints[0].x.toFixed(2)},${pathPoints[0].y.toFixed(2)} `;
+            
+            // Add outer path
+            for (let j = 1; j < pathPoints.length; j++) {
+                pathD += `L ${pathPoints[j].x.toFixed(2)},${pathPoints[j].y.toFixed(2)} `;
+            }
+            
+            // Add inner path in reverse
+            for (let j = 0; j < innerPathPoints.length; j++) {
+                pathD += `L ${innerPathPoints[j].x.toFixed(2)},${innerPathPoints[j].y.toFixed(2)} `;
+            }
+            
+            // Close the path
+            pathD += "Z";
+            
+            // Add the arm to SVG
+            svgContent += `<path class="spiral-arm" name="arm${i+1}" d="${pathD}" stroke="#282828" stroke-width="1" fill="white" />\n`;
+            
+            // Draw the node circle
+            svgContent += `<circle cx="${nodeCenter.x.toFixed(2)}" cy="${nodeCenter.y.toFixed(2)}" r="${nodeRadius}" stroke="#282828" stroke-width="1" fill="white" opacity="1" />\n`;
         }
 
+        document.querySelector('#strain-svg').innerHTML = svgContent;
 
-        document.querySelector('#strain-svg').innerHTML = paths;
+        // Make arms clickable to toggle active state
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.spiral-arm').forEach(arm => {
+                arm.addEventListener('click', () => {
+                    arm.classList.toggle('active');
+                    if (arm.classList.contains('active')) {
+                        arm.setAttribute('fill', '#cccccc');
+                    } else {
+                        arm.setAttribute('fill', 'white');
+                    }
+                });
+            });
+        });
     </script>
     <script>
     document.querySelectorAll('.ring-part').forEach(part => {
