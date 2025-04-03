@@ -107,7 +107,7 @@
                     </tr>
                     <tr>
                         <td style="padding: 0; line-height: 0.8;">
-                            <span style="position: relative; top: -3px; font-size: smaller;">Focus / Fatigue</span>
+                            <span style="position: relative; top: -3px; font-size: smaller;">Strain / Fatigue</span>
                         </td>
                     </tr>
                     <tr id="exhaustion-row">
@@ -120,10 +120,79 @@
         </div>
 
 
+        <div class="distributer">
+            <div id="scars-minipage" class="minipage minipage-small">
+                <!-- <div id="scars" class="text-center item-header" >Scars</div>
+                <table id="scars-table" class="list-table wide-input">
+                    <tr>
+                        <td><input type="text" name="scar1"></td>
+                        <td><input type="text" name="exp_mod1"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="scar2"></td>
+                        <td><input type="text" name="exp_mod2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="scar3"></td>
+                        <td><input type="text" name="exp_mod3"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="scar4"></td>
+                        <td><input type="text" name="exp_mod4"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="scar5"></td>
+                        <td><input type="text" name="exp_mod5"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="scar6"></td>
+                        <td><input type="text" name="exp_mod6"></td>
+                    </tr>
+                </table> -->
+            </div>
+            <div id="strain-minipage">
+                <div style="display: flex; align-items: center;">
+                    <svg id="strain-svg" width="200" height="200" viewBox="0 0 200 200"></svg>
+                    <div class="text-center center" style="position: relative; top: -50%; left: -50%; width: 0; display: flex; justify-content: center; align-items: center;">
+                        <span class="text-center"">Focus</span>
+                    </div>
+                </div>
+            </div>
+            <div id="titles-minipage" class="minipage minipage-small">
+                <!-- <div id="titles" class="text-center item-header" >Titles</div>
+                <table id="title-table" class="list-table wide-input">
+                    <tr>
+                        <td><input type="text" name="exp1"></td>
+                        <td><input type="text" name="exp_mod1"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp2"></td>
+                        <td><input type="text" name="exp_mod2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp3"></td>
+                        <td><input type="text" name="exp_mod3"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp4"></td>
+                        <td><input type="text" name="exp_mod4"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp5"></td>
+                        <td><input type="text" name="exp_mod5"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="exp6"></td>
+                        <td><input type="text" name="exp_mod6"></td>
+                    </tr>
+                </table> -->
+            </div>
+            <span style="width: 100%; display: inline-block;"></span>
+        </div>
 
         <div class="distributer">
             <div class="minipage-smaller">
-                <div class="text-center item-header" style="margin-top: -82px;">Armor</div>
+                <!-- <div class="text-center item-header" style="margin-top: -82px;">Armor</div>
                 <table id="hit-mods" class="list-table wide-input input-offset">
                     <tr>
                         <td style="width: 45px;" class="text-center centered-input"><input type="text" name="hit_mod""></td>
@@ -136,7 +205,7 @@
                         <td style="width: 45px;" class="text-center centered-input"><input disabled value="Brutal" type="text"></td>
                     </tr>
                 <!-- </table>
-                <table id="resistances" class="list-table wide-input"> -->
+                <table id="resistances" class="list-table wide-input"> --
                     <tr>
                         <td colspan="2"><input disabled value="Armor Bulk" type="text" name="res3"></td>
                         <td><input type="text" name="res3_mod"></td>
@@ -153,14 +222,14 @@
                         <td colspan="2"><input type="text" name="res6"></td>
                         <td><input type="text" name="res6_mod"></td>
                     </tr>
-                </table>
+                </table> -->
             </div>
             <div class="minipage minipage-large">
                 
                 <table id="weapons">
                     <tr>
                         <td style="width: 8.5em;">Weapon</td>
-                        <td style="width: 4em;">Damage</td>
+                        <td style="width: 7em;">Active</td>
                         <!-- <td style="width: 3em;">Reach</td> -->
                         <td style="width: auto;">Tags</td>
                     </tr>
@@ -186,7 +255,7 @@
             </div>
 
             <div class="minipage minipage-smaller" style="margin-top: -80px;">
-                <div class="star-checkboxes center text-center" style="width: 100px;">
+                <!-- <div class="star-checkboxes center text-center" style="width: 100px;">
                     Hope here?
                     <label class="star-checkbox">
                         <input type="checkbox" name="star1">
@@ -230,8 +299,8 @@
                             <polygon points="10,1 13,7 19,10 13,13 10,19 7,13 1,10 7,7"></polygon>
                         </svg>
                     </label>
-                    <span class="text-center center" style="margin-inline: auto; padding-right: 20px;">Hope</span> -->
-                </div>
+                    <span class="text-center center" style="margin-inline: auto; padding-right: 20px;">Hope</span>
+                </div> -->
                 <!-- <div class="stances" style="width: fit-content;">
                     <table id="stance-table">
                         <tr>
@@ -263,74 +332,105 @@
         <div style="clear: both;"></div>
 
         <div class="distributer">
-            <div id="scars-minipage" class="minipage minipage-small">
-                <div id="scars" class="text-center item-header" >Scars</div>
-                <table id="scars-table" class="list-table wide-input">
+            <div id="languages-minipage" class="minipage minipage-small" style="margin-left: 0px">
+                <!-- <div id="languages" class="text-center item-header" >Languages</div>
+
+                <table id="languages-table" class="list-table wide-input">
                     <tr>
-                        <td><input type="text" name="scar1"></td>
-                        <td><input type="text" name="exp_mod1"></td>
+                        <td><input type="text" name="lang1"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="scar2"></td>
-                        <td><input type="text" name="exp_mod2"></td>
+                        <td><input type="text" name="lang2"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="scar3"></td>
-                        <td><input type="text" name="exp_mod3"></td>
+                        <td><input type="text" name="lang3"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="scar4"></td>
-                        <td><input type="text" name="exp_mod4"></td>
+                        <td><input type="text" name="lang4"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="scar5"></td>
-                        <td><input type="text" name="exp_mod5"></td>
+                        <td><input type="text" name="lang5"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="scar6"></td>
-                        <td><input type="text" name="exp_mod6"></td>
+                        <td><input type="text" name="lang6"></td>
                     </tr>
-                </table>
+                </table> -->
             </div>
-            <div id="strain-minipage">
-                <div class="text-center" style="width: 100%;">
-                    <span style="margin-inline: auto;">Strain</span>
-                </div>
-                <div style="display: flex; align-items: center;">
-                    <svg id="strain-svg" width="200" height="200" viewBox="0 0 200 200"></svg>
-                    <!-- <div class="text-center center" style="position: relative; top: -50%; left: -50%; width: 0; display: flex; justify-content: center; align-items: center;">
-                        <span class="text-center"">Pressure<br>Die</span>
-                    </div> -->
-                </div>
-            </div>
-            <div id="titles-minipage" class="minipage minipage-small">
-                <div id="titles" class="text-center item-header" >Titles</div>
-                <table id="title-table" class="list-table wide-input">
+            <div class="minipage minipage-large">
+                <div class="text-center item-header">Abilities & Mutations</div>
+                <table id="abilities" class="list-table wide-input" >
                     <tr>
-                        <td><input type="text" name="exp1"></td>
-                        <td><input type="text" name="exp_mod1"></td>
+                        <td><input type="text" name="inv1"></td>
+                        <td><input type="text" name="inv2"></td>
+                        <td><input type="text" name="inv2"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="exp2"></td>
-                        <td><input type="text" name="exp_mod2"></td>
+                        <td><input type="text" name="inv3"></td>
+                        <td><input type="text" name="inv4"></td>
+                        <td><input type="text" name="inv2"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="exp3"></td>
-                        <td><input type="text" name="exp_mod3"></td>
+                        <td><input type="text" name="inv5"></td>
+                        <td><input type="text" name="inv6"></td>
+                        <td><input type="text" name="inv2"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="exp4"></td>
-                        <td><input type="text" name="exp_mod4"></td>
+                        <td><input type="text" name="inv7"></td>
+                        <td><input type="text" name="inv8"></td>
+                        <td><input type="text" name="inv2"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="exp5"></td>
-                        <td><input type="text" name="exp_mod5"></td>
+                        <td><input type="text" name="inv9"></td>
+                        <td><input type="text" name="inv10"></td>
+                        <td><input type="text" name="inv2"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="exp6"></td>
-                        <td><input type="text" name="exp_mod6"></td>
+                        <td><input type="text" name="inv11"></td>
+                        <td><input type="text" name="inv12"></td>
+                        <td><input type="text" name="inv2"></td>
                     </tr>
+                    <tr>
+                        <td><input type="text" name="inv11"></td>
+                        <td><input type="text" name="inv12"></td>
+                        <td><input type="text" name="inv2"></td>
+                    </tr>
+                    <!-- <tr>
+                        <td>Attacking</td>
+                        <td>Controlling</td>
+                        <td>Defending</td>
+                    </tr>
+                    <tr style="height: 10px;">
+                        <td></td>
+                        <td style=" border-inline: 1px solid #232323;"></td>
+                        <td></td>
+                    </tr> -->
                 </table>
+
+
+            </div>
+            <div id="deeds-minipage" class="minipage minipage-small" style="margin-right: 0px;">
+                
+                <!-- <div id="deeds" class="text-center item-header" >Deeds</div>
+                <table id="deeds-table" class="list-table wide-input">
+                    <tr>
+                        <td><input type="text" name="deed1"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="deed2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="deed3"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="deed4"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="deed5"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="deed6"></td>
+                    </tr>
+                </table> -->
             </div>
             <span style="width: 100%; display: inline-block;"></span>
         </div>
@@ -405,110 +505,7 @@
         </div>
 
         <div style="clear: both;"></div>
-        <div class="distributer">
-            <div id="languages-minipage" class="minipage minipage-small" style="margin-left: 0px">
-                <div id="languages" class="text-center item-header" >Languages</div>
-
-                <table id="languages-table" class="list-table wide-input">
-                    <tr>
-                        <td><input type="text" name="lang1"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="lang2"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="lang3"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="lang4"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="lang5"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="lang6"></td>
-                    </tr>
-                </table>
-
-            </div>
-            <div class="minipage minipage-large">
-                <div class="text-center item-header" >Abilities</div>
-                <table id="abilities" class="list-table wide-input" >
-                    <tr>
-                        <td><input type="text" name="inv1"></td>
-                        <td><input type="text" name="inv2"></td>
-                        <td><input type="text" name="inv2"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="inv3"></td>
-                        <td><input type="text" name="inv4"></td>
-                        <td><input type="text" name="inv2"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="inv5"></td>
-                        <td><input type="text" name="inv6"></td>
-                        <td><input type="text" name="inv2"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="inv7"></td>
-                        <td><input type="text" name="inv8"></td>
-                        <td><input type="text" name="inv2"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="inv9"></td>
-                        <td><input type="text" name="inv10"></td>
-                        <td><input type="text" name="inv2"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="inv11"></td>
-                        <td><input type="text" name="inv12"></td>
-                        <td><input type="text" name="inv2"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="inv11"></td>
-                        <td><input type="text" name="inv12"></td>
-                        <td><input type="text" name="inv2"></td>
-                    </tr>
-                    <tr>
-                        <td>Attacking</td>
-                        <td>Controlling</td>
-                        <td>Defending</td>
-                    </tr>
-                    <tr style="height: 10px;">
-                        <td></td>
-                        <td style=" border-inline: 1px solid #232323;"></td>
-                        <td></td>
-                    </tr>
-                </table>
-
-
-            </div>
-            <div id="deeds-minipage" class="minipage minipage-small" style="margin-right: 0px;">
-                
-                <div id="deeds" class="text-center item-header" >Deeds</div>
-                <table id="deeds-table" class="list-table wide-input">
-                    <tr>
-                        <td><input type="text" name="deed1"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="deed2"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="deed3"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="deed4"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="deed5"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="deed6"></td>
-                    </tr>
-                </table>
-            </div>
-            <span style="width: 100%; display: inline-block;"></span>
-        </div>
+        
     </section>
     <script>
         localStorage = window['localStorage']
@@ -542,7 +539,7 @@
     <script>
         const centerX = 100, centerY = 100;
         const arms = 12;
-        const startRadius = 10, endRadius = 80; // Adjusted start radius to be smaller
+        const startRadius = 25, endRadius = 80; // Adjusted start radius to be smaller
         const rotationDegrees = 126; // 35% of a circle (360 * 0.35)
         const steps = 100; // number of segments per arm
         const nodeRadius = 6; // radius of node at end of each arm (8 gives smooth arms)
@@ -568,9 +565,35 @@
 
         let svgContent = "";
 
+        for (let i = 0; i < arms; i++) {
+            const baseAngle = (360 / arms) * i + -10;
+            let pathPoints = [];
+            let innerPathPoints = [];
+            
+            // Calculate node position at 80% of arm length
+            const nodePosition = 0.8;
+            const nodeR = startRadius + (endRadius - startRadius) * nodePosition;
+            const nodeAngle = baseAngle + rotationDegrees * nodePosition;
+            const nodeCenter = polarPoint(nodeR + nodeRadius, nodeAngle);
+            // Not what I was going for, but a pretty cool effect
+            // Draw a hook triangle from each node
+            const hookLength = 10; // Length of the hook triangle
+            const hookWidth = 5; // Width of the hook triangle
+            const hookAngle = 30; // Angle of the hook triangle
+    
+            const hookBaseAngle = nodeAngle + 90; // Base angle for the hook triangle
+            const hookBasePoint = polarPoint(nodeR + nodeRadius, hookBaseAngle);
+            const hookTipPoint = polarPoint(nodeR + nodeRadius + hookLength, hookBaseAngle + hookAngle);
+            const hookLeftPoint = polarPoint(nodeR + nodeRadius + hookLength, hookBaseAngle - hookAngle);
+            const hookRightPoint = polarPoint(nodeR + nodeRadius + hookLength, hookBaseAngle + hookAngle);
+    
+            const hookPath = `M ${hookBasePoint.x.toFixed(2)},${hookBasePoint.y.toFixed(2)} L ${hookTipPoint.x.toFixed(2)},${hookTipPoint.y.toFixed(2)} L ${hookLeftPoint.x.toFixed(2)},${hookLeftPoint.y.toFixed(2)} Z`;
+            svgContent += `<path class="hook" d="${hookPath}" stroke="#282828" stroke-width="1" fill="white" />\n`;
+        }
+
         // Generate arms
         for (let i = 0; i < arms; i++) {
-            const baseAngle = (360 / arms) * i;
+            const baseAngle = (360 / arms) * i + -10;
             let pathPoints = [];
             let innerPathPoints = [];
             
@@ -590,30 +613,43 @@
                     const angle = baseAngle + rotationDegrees * t;
                     pathPoints.push(polarPoint(r, angle));
                 } 
-                // else {
-                //     // Wrap around the node with a smooth continuation from the spiral
-                //     const previousPoint = pathPoints[pathPoints.length - 1]; // Get last point of spiral
+                // else if (t <= 0.9) {
+                //     // Create a curved spike extending outward from the node
                 //     const normalizedPercent = (t - nodePosition) / (1 - nodePosition);
                     
-                //     // Calculate the angle to ensure smooth continuation
-                //     const tangentAngle = baseAngle + rotationDegrees;
-                //     const wrapAngle = nodeAngle + normalizedPercent * 360 * nodeWrapPercent;
+                //     // Calculate base angle for the spike
+                //     const spikeBaseAngle = nodeAngle + 30; // Adjust angle as needed
                     
-                //     // Use a blend between tangent direction and circular path for smooth transition
-                //     const blendFactor = Math.min(1, normalizedPercent * 3); // Faster blend for smoother transition
+                //     // Calculate spike length - grows then recedes
+                //     const spikeLength = nodeRadius * 2 * Math.sin(Math.PI * normalizedPercent);
                     
-                //     // Calculate the radius with a smooth transition
-                //     const distanceToNode = Math.sqrt(
-                //         Math.pow(nodeCenter.x - previousPoint.x, 2) + 
-                //         Math.pow(nodeCenter.y - previousPoint.y, 2)
-                //     );
+                //     // Calculate curved path for the spike
+                //     const curveOffset = 15 * Math.sin(Math.PI * normalizedPercent);
+                //     const curveAngle = spikeBaseAngle + curveOffset;
                     
-                //     // Blend the radius from the spiral end to the node circle
-                //     const curveRadius = nodeRadius + armWidth/2 - (armWidth/2) * blendFactor;
-                    
+                //     // Position extending outward from node
                 //     pathPoints.push({
-                //         x: nodeCenter.x + curveRadius * Math.cos((Math.PI / 180) * wrapAngle),
-                //         y: nodeCenter.y + curveRadius * Math.sin((Math.PI / 180) * wrapAngle)
+                //         x: nodeCenter.x + (nodeRadius + spikeLength) * Math.cos((Math.PI / 180) * curveAngle),
+                //         y: nodeCenter.y + (nodeRadius + spikeLength) * Math.sin((Math.PI / 180) * curveAngle)
+                //     });
+                // } else {
+                //     // Create a curved spike extending inward from the node
+                //     const normalizedPercent = (t - 0.9) / 0.1;
+                    
+                //     // Calculate base angle for the spike
+                //     const spikeBaseAngle = nodeAngle + 30; // Adjust angle as needed
+                    
+                //     // Calculate spike length - grows then recedes
+                //     const spikeLength = nodeRadius * 2 * Math.sin(Math.PI * normalizedPercent);
+                    
+                //     // Calculate curved path for the spike
+                //     const curveOffset = -15 * Math.sin(Math.PI * normalizedPercent);
+                //     const curveAngle = spikeBaseAngle + curveOffset;
+                    
+                //     // Position extending inward from node
+                //     pathPoints.push({
+                //         x: nodeCenter.x + (nodeRadius + spikeLength) * Math.cos((Math.PI / 180) * curveAngle),
+                //         y: nodeCenter.y + (nodeRadius + spikeLength) * Math.sin((Math.PI / 180) * curveAngle)
                 //     });
                 // }
             }
@@ -622,14 +658,17 @@
             for (let j = steps; j >= 0; j--) {
                 const t = j / steps;
                 
-                if (t <= 0.84) {
+                if (t <= 0.20) {
+                    continue; // Skip the first 20% of the inner path
+                }
+                else if (t <= 0.84) {
                     // Regular spiral segment inner curve
                     const r = Math.max(1, startRadius + (endRadius - startRadius) * t - armWidth);
                     const angle = baseAngle + rotationDegrees * t;
                     innerPathPoints.push(polarPoint(r, angle));
                 } else {
                     // Inner curve wrapping around the node
-                    const wrapStart = nodeAngle + 320 * nodeWrapPercent;;
+                    const wrapStart = nodeAngle + 320 * nodeWrapPercent;
                     const wrapEnd = nodeAngle 
                     const wrapPercent = (t - nodePosition) / (1 - nodePosition);
                     const wrapAngle = wrapStart + wrapPercent * (wrapEnd - wrapStart);
@@ -656,11 +695,23 @@
             // Close the path
             pathD += "Z";
             
+            //Draw a triangle piercing out from each node
+            const triangleSize = 5; // Size of the triangle
+            const triangleAngle = 10; // Angle of the triangle
+            const triangleBasePoint = polarPoint(nodeR + nodeRadius, nodeAngle);
+            const triangleTipPoint = polarPoint(nodeR + nodeRadius + triangleSize, nodeAngle);
+            const triangleLeftPoint = polarPoint(nodeR + nodeRadius, nodeAngle - triangleAngle);
+            const triangleRightPoint = polarPoint(nodeR + nodeRadius - triangleSize, nodeAngle);
+
+            const trianglePath = `M ${triangleRightPoint.x.toFixed(2)},${triangleRightPoint.y.toFixed(2)} L ${triangleTipPoint.x.toFixed(2)},${triangleTipPoint.y.toFixed(2)} L ${triangleLeftPoint.x.toFixed(2)},${triangleLeftPoint.y.toFixed(2)} Z`;
+            svgContent += `<path class="spiral-triangle" d="${trianglePath}" stroke="#282828" stroke-width="1" fill="white" />\n`;
+
             // Add the arm to SVG
             svgContent += `<path class="spiral-arm" name="arm${i+1}" d="${pathD}" stroke="#282828" stroke-width="1" fill="white" />\n`;
             
             // Draw the node circle
-            svgContent += `<circle cx="${nodeCenter.x.toFixed(2)}" cy="${nodeCenter.y.toFixed(2)}" r="${nodeRadius}" stroke="#282828" stroke-width="1" fill="white" opacity="1" />\n`;
+            svgContent += `<circle class="spiral-node" cx="${nodeCenter.x.toFixed(2)}" cy="${nodeCenter.y.toFixed(2)}" r="${nodeRadius}" stroke="#282828" stroke-width="1" fill="white" opacity="1" />\n`;
+
         }
 
         document.querySelector('#strain-svg').innerHTML = svgContent;
@@ -668,6 +719,26 @@
         // Make arms clickable to toggle active state
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.spiral-arm').forEach(arm => {
+                arm.addEventListener('click', () => {
+                    arm.classList.toggle('active');
+                    if (arm.classList.contains('active')) {
+                        arm.setAttribute('fill', '#000');
+                    } else {
+                        arm.setAttribute('fill', 'white');
+                    }
+                });
+            });
+            document.querySelectorAll('.spiral-node').forEach(arm => {
+                arm.addEventListener('click', () => {
+                    arm.classList.toggle('active');
+                    if (arm.classList.contains('active')) {
+                        arm.setAttribute('fill', '#000');
+                    } else {
+                        arm.setAttribute('fill', 'white');
+                    }
+                });
+            });
+            document.querySelectorAll('.spiral-triangle').forEach(arm => {
                 arm.addEventListener('click', () => {
                     arm.classList.toggle('active');
                     if (arm.classList.contains('active')) {
